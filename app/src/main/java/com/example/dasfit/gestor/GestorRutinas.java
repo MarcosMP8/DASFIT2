@@ -37,4 +37,19 @@ public class GestorRutinas {
     public List<Ejercicio> getEjerciciosDeRutina(int rutinaId) {
         return ejercicioDao.obtenerEjerciciosDeRutina(rutinaId);
     }
+
+    // 🔹 Método para eliminar un ejercicio de la base de datos
+    public void eliminarEjercicio(Ejercicio ejercicio) {
+        ejercicioDao.eliminarEjercicio(ejercicio);
+    }
+
+    // 🔹 Método para actualizar un ejercicio en la base de datos
+    public void actualizarEjercicio(Ejercicio ejercicio) {
+        ejercicioDao.actualizarEjercicio(ejercicio);
+    }
+
+    // 🔹 Método para obtener un ejercicio por ID
+    public Ejercicio obtenerEjercicioPorId(int id) {
+        return ejercicioDao.obtenerEjercicioPorId(id);
+    }
 }

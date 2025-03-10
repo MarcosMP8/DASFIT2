@@ -24,6 +24,13 @@
         android:layout_gravity="center_horizontal"
         android:padding="10dp"/>
 
+    <Button
+        android:id="@+id/btnAgregarEjercicio"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Añadir Ejercicio"
+        android:layout_marginBottom="10dp"/>
+
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerViewEjercicios"
         android:layout_width="match_parent"

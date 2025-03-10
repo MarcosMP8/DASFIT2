@@ -21,6 +21,14 @@
             </intent-filter>
         </activity>
 
+        <activity
+            android:name=".AgregarEjercicioActivity"
+            android:exported="true"/>
+
+        <activity
+            android:name=".EditarEjercicioActivity"
+            android:exported="true"/>
+
         <!-- Registro de DetalleRutinaActivity -->
         <activity
             android:name=".DetalleRutinaActivity"
