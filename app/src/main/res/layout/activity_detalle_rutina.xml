@@ -4,36 +4,52 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:padding="16dp">
+    android:padding="16dp"
+    android:background="@color/gris_claro">
 
     <!-- Toolbar con botón de volver atrás -->
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbar"
         android:layout_width="match_parent"
         android:layout_height="?attr/actionBarSize"
-        android:background="?attr/colorPrimary"
+        android:background="@android:color/transparent"
         app:title="Ejercicios"
+        app:titleTextColor="@color/rojo_granate"
         app:navigationIcon="@drawable/ic_back"
         app:popupTheme="@style/ThemeOverlay.AppCompat.Light"/>
 
     <Button
-        android:id="@+id/btnVolver"
+        android:id="@+id/btnAgregarEjercicio"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Volver"
-        android:layout_gravity="center_horizontal"
-        android:padding="10dp"/>
+        android:background="@drawable/button_selector"
+        android:text="Añadir Ejercicio"
+        android:textColor="@color/rojo_granate"
+        android:textStyle="bold"
+        android:padding="10dp"
+        android:layout_gravity="center"/>
 
-    <Button
-        android:id="@+id/btnAgregarEjercicio"
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Añadir Ejercicio"
-        android:layout_marginBottom="10dp"/>
+        android:orientation="vertical">
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/recyclerViewEjercicios"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:scrollbars="vertical"/>
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerViewEjercicios"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:scrollbars="vertical"/>
+
+        <Button
+            android:id="@+id/btnVolver"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/button_selector"
+            android:text="Volver"
+            android:textColor="@color/rojo_granate"
+            android:textStyle="bold"
+            android:padding="10dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="10dp"/>
+    </LinearLayout>
 </LinearLayout>

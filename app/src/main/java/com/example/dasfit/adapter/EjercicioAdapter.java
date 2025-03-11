@@ -11,7 +11,6 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
 import androidx.recyclerview.widget.RecyclerView;
-
 import com.example.dasfit.DetalleRutinaActivity;
 import com.example.dasfit.EditarEjercicioActivity;
 import com.example.dasfit.R;
@@ -51,7 +50,6 @@ public class EjercicioAdapter extends RecyclerView.Adapter<EjercicioAdapter.View
             intent.putExtra("ejercicio_id", ejercicio.getId());
             ((DetalleRutinaActivity) context).startActivityForResult(intent, 2);
         });
-
 
         // Botón para eliminar ejercicio
         holder.btnEliminar.setOnClickListener(v -> {

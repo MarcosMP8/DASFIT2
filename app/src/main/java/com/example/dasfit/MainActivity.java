@@ -33,13 +33,7 @@ public class MainActivity extends AppCompatActivity {
             listaRutinas = gestorRutinas.getListaRutinas();
         }
 
-        // Configurar el adaptador con el listener
-        rutinaAdapter = new RutinaAdapter(listaRutinas, rutina -> {
-            Intent intent = new Intent(MainActivity.this, DetalleRutinaActivity.class);
-            intent.putExtra("rutina_id", rutina.getId());
-            startActivity(intent);
-        });
-
+        rutinaAdapter = new RutinaAdapter(this, listaRutinas);
         recyclerViewRutinas.setAdapter(rutinaAdapter);
     }
 }

@@ -22,21 +22,31 @@ public class EditarEjercicioActivity extends AppCompatActivity {
         setContentView(R.layout.activity_editar_ejercicio);
 
         ejercicioId = getIntent().getIntExtra("ejercicio_id", -1);
+        if (ejercicioId == -1) {
+            Toast.makeText(this, "Error: No se pudo obtener el ejercicio", Toast.LENGTH_LONG).show();
+            finish();
+            return;
+        }
+
         gestorRutinas = new GestorRutinas(this);
         ejercicio = gestorRutinas.obtenerEjercicioPorId(ejercicioId);
 
-        etNombre = findViewById(R.id.etNombreEjercicio);
+        if (ejercicio == null) {
+            Toast.makeText(this, "Error: Ejercicio no encontrado", Toast.LENGTH_LONG).show();
+            finish();
+            return;
+        }
+
+        etNombre = findViewById(R.id.etNombre);
         etRepeticiones = findViewById(R.id.etRepeticiones);
         etPeso = findViewById(R.id.etPeso);
         etDuracion = findViewById(R.id.etDuracion);
         btnActualizar = findViewById(R.id.btnActualizarEjercicio);
 
-        if (ejercicio != null) {
-            etNombre.setText(ejercicio.getNombre());
-            etRepeticiones.setText(String.valueOf(ejercicio.getRepeticiones()));
-            etPeso.setText(String.valueOf(ejercicio.getPeso()));
-            etDuracion.setText(String.valueOf(ejercicio.getDuracion()));
-        }
+        etNombre.setText(ejercicio.getNombre());
+        etRepeticiones.setText(String.valueOf(ejercicio.getRepeticiones()));
+        etPeso.setText(String.valueOf(ejercicio.getPeso()));
+        etDuracion.setText(String.valueOf(ejercicio.getDuracion()));
 
         btnActualizar.setOnClickListener(v -> {
             ejercicio.setNombre(etNombre.getText().toString().trim());
@@ -47,12 +57,14 @@ public class EditarEjercicioActivity extends AppCompatActivity {
             gestorRutinas.actualizarEjercicio(ejercicio);
             Toast.makeText(this, "Ejercicio actualizado", Toast.LENGTH_SHORT).show();
 
-            // 🔹 Devolver resultado a DetalleRutinaActivity
+            // Devolver resultado a DetalleRutinaActivity
             Intent resultIntent = new Intent();
             setResult(RESULT_OK, resultIntent);
-
             finish();
         });
 
+        // Botón para volver a la pantalla anterior
+        Button btnVolver = findViewById(R.id.btnVolver);
+        btnVolver.setOnClickListener(v -> finish());
     }
 }

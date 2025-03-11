@@ -25,12 +25,11 @@ public class DetalleRutinaActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_detalle_rutina);
 
-        // Configurar Toolbar con botón de volver atrás
+        // Configurar Toolbar con botón de volver atrás sin color de fondo
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         if (getSupportActionBar() != null) {
             getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-            getSupportActionBar().setHomeAsUpIndicator(android.R.drawable.ic_media_previous);
         }
         toolbar.setNavigationOnClickListener(v -> onBackPressed()); // Botón de retroceso
 
@@ -58,10 +57,7 @@ public class DetalleRutinaActivity extends AppCompatActivity {
         ejercicioAdapter = new EjercicioAdapter(this, listaEjercicios);
         recyclerViewEjercicios.setAdapter(ejercicioAdapter);
 
-        // Botón para volver a la pantalla anterior
-        Button btnVolver = findViewById(R.id.btnVolver);
-        btnVolver.setOnClickListener(v -> finish());
-
+        // Botón para añadir ejercicio
         Button btnAgregarEjercicio = findViewById(R.id.btnAgregarEjercicio);
         btnAgregarEjercicio.setOnClickListener(v -> {
             Intent intent = new Intent(DetalleRutinaActivity.this, AgregarEjercicioActivity.class);
@@ -69,11 +65,9 @@ public class DetalleRutinaActivity extends AppCompatActivity {
             startActivityForResult(intent, 1);
         });
 
-    }
-
-    @Override
-    public void onBackPressed() {
-        super.onBackPressed(); // Regresa a la actividad anterior
+        // Botón para volver a la pantalla anterior
+        Button btnVolver = findViewById(R.id.btnVolver);
+        btnVolver.setOnClickListener(v -> finish());
     }
 
     @Override
@@ -87,5 +81,8 @@ public class DetalleRutinaActivity extends AppCompatActivity {
         }
     }
 
-
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed(); // Regresa a la actividad anterior
+    }
 }

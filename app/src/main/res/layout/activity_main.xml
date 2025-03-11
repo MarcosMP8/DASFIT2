@@ -3,7 +3,19 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:padding="16dp">
+    android:padding="16dp"
+    android:gravity="center"
+    android:background="@color/gris_claro">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Bienvenido a DASFIT"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        android:textColor="@color/rojo_granate"
+        android:fontFamily="@font/montserrat_bold"
+        android:layout_gravity="center"/>
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerViewRutinas"

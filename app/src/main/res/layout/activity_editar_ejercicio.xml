@@ -3,19 +3,24 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:padding="16dp">
+    android:padding="16dp"
+    android:background="@color/gris_claro">
 
     <EditText
-        android:id="@+id/etNombreEjercicio"
+        android:id="@+id/etNombre"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Nombre del ejercicio"/>
+        android:hint="Nombre"
+        android:textColor="@color/rojo_granate"
+        android:backgroundTint="@color/rojo_granate"/>
 
     <EditText
         android:id="@+id/etRepeticiones"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="Repeticiones"
+        android:textColor="@color/rojo_granate"
+        android:backgroundTint="@color/rojo_granate"
         android:inputType="number"/>
 
     <EditText
@@ -23,6 +28,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="Peso (kg) - Opcional"
+        android:textColor="@color/rojo_granate"
+        android:backgroundTint="@color/rojo_granate"
         android:inputType="numberDecimal"/>
 
     <EditText
@@ -30,12 +37,32 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="Duración (segundos) - Opcional"
+        android:textColor="@color/rojo_granate"
+        android:backgroundTint="@color/rojo_granate"
         android:inputType="number"/>
 
     <Button
         android:id="@+id/btnActualizarEjercicio"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Actualizar Ejercicio"/>
+        android:background="@drawable/button_selector"
+        android:textColor="@color/rojo_granate"
+        android:text="Actualizar Ejercicio"
+        android:textStyle="bold"
+        android:padding="10dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="10dp"/>
+
+    <Button
+        android:id="@+id/btnVolver"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/button_selector"
+        android:text="Volver"
+        android:textColor="@color/rojo_granate"
+        android:textStyle="bold"
+        android:padding="10dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="10dp"/>
 
 </LinearLayout>
