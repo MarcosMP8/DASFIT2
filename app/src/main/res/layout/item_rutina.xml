@@ -31,12 +31,4 @@
         android:src="@android:drawable/ic_menu_view"
         android:background="?attr/selectableItemBackground"/>
 
-    <ImageButton
-        android:id="@+id/btnEliminarRutina"
-        android:layout_width="40dp"
-        android:layout_height="40dp"
-        android:src="@android:drawable/ic_delete"
-        android:background="?attr/selectableItemBackground"/>
-
-
 </LinearLayout>

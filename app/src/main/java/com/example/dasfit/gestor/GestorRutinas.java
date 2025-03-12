@@ -22,16 +22,30 @@ public class GestorRutinas {
         rutinaDao.insertarRutina(rutina);
     }
 
+    public List<Ejercicio> obtenerEjerciciosDeRutina(int rutinaId) {
+        return ejercicioDao.obtenerEjerciciosDeRutina(rutinaId);
+    }
+
     public void eliminarRutina(Rutina rutina) {
         if (rutina == null) return;
-        // Primero eliminar todos los ejercicios de la rutina
+
+        // 🔹 Obtener la rutina de la base de datos antes de eliminarla
+        Rutina rutinaBD = rutinaDao.obtenerRutinaPorId(rutina.getId());
+        if (rutinaBD == null) return;
+
+        // 🔹 Primero eliminar los ejercicios asociados
         List<Ejercicio> ejercicios = ejercicioDao.obtenerEjerciciosDeRutina(rutina.getId());
-        for (Ejercicio ejercicio : ejercicios) {
-            ejercicioDao.eliminarEjercicio(ejercicio);
+        if (ejercicios != null && !ejercicios.isEmpty()) {
+            for (Ejercicio ejercicio : ejercicios) {
+                ejercicioDao.eliminarEjercicio(ejercicio);
+            }
         }
-        // Luego eliminar la rutina de la base de datos
-        rutinaDao.eliminarRutina(rutina);
+
+        // 🔹 Ahora eliminar la rutina
+        rutinaDao.eliminarRutina(rutinaBD);
     }
+
+
 
 
     public List<Rutina> getListaRutinas() {
