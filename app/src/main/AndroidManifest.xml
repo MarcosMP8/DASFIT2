@@ -34,6 +34,13 @@
             android:name=".DetalleRutinaActivity"
             android:exported="true"/>
 
+        <activity android:name=".PerfilActivity"
+            android:exported="true"/>
+
+        <activity android:name=".EntrenamientosActivity"
+            android:exported="true"/>
+
+
     </application>
 
 </manifest>

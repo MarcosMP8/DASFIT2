@@ -31,7 +31,7 @@ public class DetalleRutinaActivity extends AppCompatActivity {
         if (getSupportActionBar() != null) {
             getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         }
-        toolbar.setNavigationOnClickListener(v -> onBackPressed()); // Botón de retroceso
+        toolbar.setNavigationOnClickListener(v -> onBackPressed());
 
         rutinaId = getIntent().getIntExtra("rutina_id", -1);
         if (rutinaId == -1) {

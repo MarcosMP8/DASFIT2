@@ -2,38 +2,32 @@ package com.example.dasfit;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.widget.Button;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
-import com.example.dasfit.adapter.RutinaAdapter;
-import com.example.dasfit.gestor.GestorRutinas;
-import com.example.dasfit.modelo.Rutina;
-import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
-    private RecyclerView recyclerViewRutinas;
-    private RutinaAdapter rutinaAdapter;
-    private GestorRutinas gestorRutinas;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        recyclerViewRutinas = findViewById(R.id.recyclerViewRutinas);
-        recyclerViewRutinas.setLayoutManager(new LinearLayoutManager(this));
+        Button btnRegistrar = findViewById(R.id.btnRegistrarEntrenamiento);
+        Button btnExplorar = findViewById(R.id.btnExplorarRutinas);
+        Button btnPerfil = findViewById(R.id.btnMiPerfil);
 
-        gestorRutinas = new GestorRutinas(this);
-        List<Rutina> listaRutinas = gestorRutinas.getListaRutinas();
+        btnRegistrar.setOnClickListener(v -> {
+            Intent intent = new Intent(MainActivity.this, EntrenamientosActivity.class);
+            startActivity(intent);
+        });
 
-        if (listaRutinas.isEmpty()) {
-            gestorRutinas.agregarRutina(new Rutina("Rutina de Fuerza"));
-            gestorRutinas.agregarRutina(new Rutina("Cardio Intensivo"));
-            gestorRutinas.agregarRutina(new Rutina("Full Body Express"));
-            listaRutinas = gestorRutinas.getListaRutinas();
-        }
+        btnExplorar.setOnClickListener(v -> {
+            Intent intent = new Intent(MainActivity.this, MainActivity.class); // O ajusta la actividad correcta
+            startActivity(intent);
+        });
 
-        rutinaAdapter = new RutinaAdapter(this, listaRutinas);
-        recyclerViewRutinas.setAdapter(rutinaAdapter);
+        btnPerfil.setOnClickListener(v -> {
+            Intent intent = new Intent(MainActivity.this, PerfilActivity.class);
+            startActivity(intent);
+        });
     }
 }

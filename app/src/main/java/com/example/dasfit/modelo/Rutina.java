@@ -1,5 +1,6 @@
 package com.example.dasfit.modelo;
 
+
 import androidx.room.Entity;
 import androidx.room.PrimaryKey;
 import androidx.room.Ignore;

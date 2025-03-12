@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/negro"
+    android:padding="16dp">
+
+    <!-- Toolbar con título "Perfil" y botón de ajustes -->
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/tvTituloPerfil"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Perfil"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            android:textColor="@color/rojo_granate"
+            android:layout_centerHorizontal="true"/>
+
+        <ImageButton
+            android:id="@+id/btnAjustes"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:background="@android:color/transparent"
+            android:src="@drawable/ic_settings"/>
+    </RelativeLayout>
+
+    <!-- Sección Nombre y Foto de Perfil -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:paddingTop="20dp">
+
+        <ImageView
+            android:id="@+id/ivPerfil"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:src="@drawable/ic_user"
+            android:scaleType="centerCrop"
+            android:background="@drawable/circle_border"/>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingLeft="16dp">
+
+            <TextView
+                android:id="@+id/tvNombrePerfil"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Tu Nombre"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:textColor="@color/rojo_granate"/>
+
+            <TextView
+                android:id="@+id/tvEmailPerfil"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="email@ejemplo.com"
+                android:textSize="14sp"
+                android:textColor="@color/gris_claro"/>
+        </LinearLayout>
+
+        <ImageButton
+            android:id="@+id/btnEditarNombre"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_edit"
+            android:background="@android:color/transparent"/>
+    </LinearLayout>
+
+    <!-- Selector de Género -->
+    <Spinner
+        android:id="@+id/spinnerGenero"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:entries="@array/generos"
+        android:background="@drawable/button_selector"
+        android:textColor="@color/rojo_granate"
+        android:layout_marginTop="10dp"/>
+
+    <!-- Contador de entrenamientos -->
+    <TextView
+        android:id="@+id/tvEntrenamientos"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Entrenamientos registrados: 0"
+        android:textSize="18sp"
+        android:textColor="@color/rojo_granate"
+        android:layout_marginTop="20dp"/>
+
+    <!-- Botón para ver los entrenamientos -->
+    <Button
+        android:id="@+id/btnVerEntrenamientos"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Ver mis entrenamientos"
+        android:background="@drawable/button_selector"
+        android:textColor="@color/rojo_granate"
+        android:textStyle="bold"
+        android:layout_marginTop="10dp"/>
+
+    <Button
+        android:id="@+id/btnVolverPerfil"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/button_selector"
+        android:text="Volver"
+        android:textColor="@color/rojo_granate"
+        android:textStyle="bold"
+        android:padding="10dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="10dp"/>
+
+</LinearLayout>

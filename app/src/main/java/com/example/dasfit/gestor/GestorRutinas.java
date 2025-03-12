@@ -23,8 +23,16 @@ public class GestorRutinas {
     }
 
     public void eliminarRutina(Rutina rutina) {
+        if (rutina == null) return;
+        // Primero eliminar todos los ejercicios de la rutina
+        List<Ejercicio> ejercicios = ejercicioDao.obtenerEjerciciosDeRutina(rutina.getId());
+        for (Ejercicio ejercicio : ejercicios) {
+            ejercicioDao.eliminarEjercicio(ejercicio);
+        }
+        // Luego eliminar la rutina de la base de datos
         rutinaDao.eliminarRutina(rutina);
     }
+
 
     public List<Rutina> getListaRutinas() {
         return rutinaDao.obtenerTodasRutinas();
@@ -38,7 +46,7 @@ public class GestorRutinas {
         return ejercicioDao.obtenerEjerciciosDeRutina(rutinaId);
     }
 
-    // 🔹 Método para eliminar un ejercicio de la base de datos
+    // Método para eliminar un ejercicio de la base de datos
     public void eliminarEjercicio(Ejercicio ejercicio) {
         ejercicioDao.eliminarEjercicio(ejercicio);
     }
