@@ -45,6 +45,9 @@
         <activity android:name=".EntrenamientosActivity"
             android:exported="true"/>
 
+        <activity android:name=".SettingsActivity"
+            android:exported="true"/>
+
         <receiver android:name=".utils.NotificationReceiver" android:exported="false"/>
 
 

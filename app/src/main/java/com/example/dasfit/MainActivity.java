@@ -13,6 +13,10 @@ import android.provider.Settings;
 import android.net.Uri;
 import androidx.core.content.ContextCompat;
 import androidx.core.app.ActivityCompat;
+import androidx.appcompat.app.AppCompatDelegate;
+import android.content.SharedPreferences;
+import android.content.res.Configuration;
+import java.util.Locale;
 
 import com.example.dasfit.utils.NotificationHelper;
 import com.example.dasfit.utils.NotificationReceiver;
@@ -23,6 +27,7 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        aplicarPreferencias(); // Aplicar idioma y modo oscuro antes de cargar la UI
         setContentView(R.layout.activity_main);
 
         Button btnRegistrar = findViewById(R.id.btnRegistrarEntrenamiento);
@@ -63,11 +68,27 @@ public class MainActivity extends AppCompatActivity {
         if (alarmManager != null) {
             alarmManager.setExact(AlarmManager.RTC_WAKEUP, calendar.getTimeInMillis(), pendingIntent);
         }
-
     }
+
     private void solicitarPermisoAlarmas() {
         Intent intent = new Intent(Settings.ACTION_REQUEST_SCHEDULE_EXACT_ALARM);
         intent.setData(Uri.parse("package:" + getPackageName()));
         startActivity(intent);
+    }
+
+    private void aplicarPreferencias() {
+        SharedPreferences prefs = getSharedPreferences("app_prefs", MODE_PRIVATE);
+        String idioma = prefs.getString("idioma", "es");
+        boolean esModoOscuro = prefs.getBoolean("modo_oscuro", false);
+
+        // Aplicar idioma antes de cargar la UI
+        Locale locale = new Locale(idioma);
+        Locale.setDefault(locale);
+        Configuration config = new Configuration();
+        config.setLocale(locale);
+        getResources().updateConfiguration(config, getResources().getDisplayMetrics());
+
+        // Aplicar modo oscuro
+        AppCompatDelegate.setDefaultNightMode(esModoOscuro ? AppCompatDelegate.MODE_NIGHT_YES : AppCompatDelegate.MODE_NIGHT_NO);
     }
 }
