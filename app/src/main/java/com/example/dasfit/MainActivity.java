@@ -49,8 +49,7 @@ public class MainActivity extends AppCompatActivity {
                 solicitarPermisoAlarmas();
             }
         }
-
-        programarNotificacion(); // 🔹 Activamos la notificación programada
+        programarNotificacion(); // Activamos la notificación programada
     }
 
     private void programarNotificacion() {
@@ -59,7 +58,7 @@ public class MainActivity extends AppCompatActivity {
         PendingIntent pendingIntent = PendingIntent.getBroadcast(this, 0, intent, PendingIntent.FLAG_UPDATE_CURRENT | PendingIntent.FLAG_IMMUTABLE);
 
         Calendar calendar = Calendar.getInstance();
-        calendar.add(Calendar.SECOND, 10); // 🔹 Notificación en 10 segundos para pruebas
+        calendar.add(Calendar.SECOND, 10); // Notificación en 10 segundos para pruebas
 
         if (alarmManager != null) {
             alarmManager.setExact(AlarmManager.RTC_WAKEUP, calendar.getTimeInMillis(), pendingIntent);

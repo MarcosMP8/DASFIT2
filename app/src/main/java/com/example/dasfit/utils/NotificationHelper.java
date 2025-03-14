@@ -26,27 +26,28 @@ public class NotificationHelper {
     }
 
     public static void showNotification(Context context, String title, String message) {
-        try {
-            createNotificationChannel(context);
+        createNotificationChannel(context);
 
-            Intent intent = new Intent(context, MainActivity.class);
-            PendingIntent pendingIntent = PendingIntent.getActivity(context, 0, intent, PendingIntent.FLAG_UPDATE_CURRENT | PendingIntent.FLAG_IMMUTABLE);
+        Intent intent = new Intent(context, MainActivity.class);
+        PendingIntent pendingIntent = PendingIntent.getActivity(
+                context, 0, intent, PendingIntent.FLAG_UPDATE_CURRENT | PendingIntent.FLAG_IMMUTABLE
+        );
 
-            NotificationCompat.Builder builder = new NotificationCompat.Builder(context, CHANNEL_ID)
-                    .setSmallIcon(R.drawable.ic_launcher_foreground)
-                    .setContentTitle(title)
-                    .setContentText(message)
-                    .setContentIntent(pendingIntent)
-                    .setAutoCancel(true)
-                    .setPriority(NotificationCompat.PRIORITY_DEFAULT);
+        NotificationCompat.Builder builder = new NotificationCompat.Builder(context, CHANNEL_ID)
+                .setSmallIcon(R.drawable.ic_launcher_foreground)
+                .setContentTitle(title)
+                .setContentText(message)
+                .setContentIntent(pendingIntent)
+                .setAutoCancel(true)
+                .setPriority(NotificationCompat.PRIORITY_DEFAULT);
 
-            NotificationManager manager = (NotificationManager) context.getSystemService(Context.NOTIFICATION_SERVICE);
-            if (manager != null) { // 🔹 Evitar errores si manager es null
-                manager.notify(NOTIFICATION_ID, builder.build());
-            }
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
+        NotificationManager manager = (NotificationManager) context.getSystemService(Context.NOTIFICATION_SERVICE);
+
+        // Generar un ID único usando el tiempo actual en milisegundos
+        int uniqueNotificationId = (int) System.currentTimeMillis();
+
+        manager.notify(uniqueNotificationId, builder.build());
     }
+
 
 }

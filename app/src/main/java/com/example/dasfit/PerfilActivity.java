@@ -11,6 +11,10 @@ import android.widget.Spinner;
 import android.widget.TextView;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
+import android.widget.Toast;
+import com.example.dasfit.utils.NotificationHelper;
+
+
 
 import com.example.dasfit.gestor.GestorRutinas;
 
@@ -44,8 +48,6 @@ public class PerfilActivity extends AppCompatActivity {
         int totalEntrenamientos = gestorRutinas.getListaRutinas().size();
         tvEntrenamientos.setText("Entrenamientos registrados: " + totalEntrenamientos);
 
-        // Botón para editar nombre
-        btnEditarNombre.setOnClickListener(v -> mostrarDialogoEditarNombre());
 
         // Botón para ver entrenamientos registrados
         btnVerEntrenamientos.setOnClickListener(v -> {
@@ -65,6 +67,10 @@ public class PerfilActivity extends AppCompatActivity {
             finish(); // Cierra `PerfilActivity`
         });
 
+        // Botón para editar nombre
+        btnEditarNombre.setOnClickListener(v -> {
+            mostrarDialogoEditarNombre();
+        });
     }
 
     // Método para mostrar un diálogo y editar el nombre
@@ -73,12 +79,19 @@ public class PerfilActivity extends AppCompatActivity {
         builder.setTitle("Editar Nombre");
 
         final EditText input = new EditText(this);
-        input.setText(nombreUsuario);
+        input.setText(tvNombrePerfil.getText().toString());
         builder.setView(input);
 
         builder.setPositiveButton("Guardar", (dialog, which) -> {
-            nombreUsuario = input.getText().toString().trim();
-            tvNombrePerfil.setText(nombreUsuario);
+            String nuevoNombre = input.getText().toString().trim();
+            if (!nuevoNombre.isEmpty()) {
+                tvNombrePerfil.setText(nuevoNombre);
+
+                // Enviar notificación al cambiar el nombre
+                NotificationHelper.showNotification(this, "Perfil actualizado", "Tu perfil ha sido actualizado correctamente.");
+            } else {
+                Toast.makeText(this, "El nombre no puede estar vacío", Toast.LENGTH_SHORT).show();
+            }
         });
 
         builder.setNegativeButton("Cancelar", (dialog, which) -> dialog.dismiss());
