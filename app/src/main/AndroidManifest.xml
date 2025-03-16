@@ -34,7 +34,6 @@
             android:name=".EditarEjercicioActivity"
             android:exported="true"/>
 
-        <!-- Registro de DetalleRutinaActivity -->
         <activity
             android:name=".DetalleRutinaActivity"
             android:exported="true"/>
@@ -45,7 +44,10 @@
         <activity android:name=".EntrenamientosActivity"
             android:exported="true"/>
 
-        <activity android:name=".SettingsActivity"
+        <activity android:name=".ExplorarRutinasActivity"
+            android:exported="true"/>
+
+        <activity android:name=".DetalleRutinaPredefinidaActivity"
             android:exported="true"/>
 
         <receiver android:name=".utils.NotificationReceiver" android:exported="false"/>

@@ -4,52 +4,58 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:gravity="center"
-    android:padding="16dp"
+    android:padding="24dp"
     android:background="@color/gris_claro">
 
+    <!-- Título principal -->
     <TextView
-        android:id="@+id/tvTituloHome"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="DASFIT"
         android:textSize="32sp"
         android:textStyle="bold"
-        android:textColor="@color/rojo_granate"/>
+        android:textColor="@color/rojo_granate"
+        android:layout_marginBottom="10dp" />
 
     <TextView
-        android:id="@+id/tvSubtituloHome"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Bienvenido al cambio"
         android:textSize="20sp"
-        android:textStyle="italic"
         android:textColor="@color/rojo_granate"
-        android:layout_marginBottom="20dp"/>
+        android:layout_marginBottom="40dp" />
 
+    <!-- Botón Registrar Entrenamiento -->
     <Button
         android:id="@+id/btnRegistrarEntrenamiento"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="@drawable/button_selector"
+        android:layout_height="60dp"
         android:text="Registrar Entrenamiento"
-        android:textColor="@color/rojo_granate"
-        android:textStyle="bold"/>
+        android:backgroundTint="@color/rojo_claro"
+        android:textColor="@android:color/white"
+        android:textSize="18sp"
+        android:layout_marginBottom="20dp" />
 
+    <!-- Botón Explorar Rutinas -->
     <Button
         android:id="@+id/btnExplorarRutinas"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="@drawable/button_selector"
+        android:layout_height="60dp"
         android:text="Explorar Rutinas"
-        android:textColor="@color/rojo_granate"
-        android:textStyle="bold"/>
+        android:backgroundTint="@color/rojo_claro"
+        android:textColor="@android:color/white"
+        android:textSize="18sp"
+        android:layout_marginBottom="20dp" />
 
+    <!-- Botón Mi Perfil -->
     <Button
         android:id="@+id/btnMiPerfil"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="@drawable/button_selector"
+        android:layout_height="60dp"
         android:text="Mi Perfil"
-        android:textColor="@color/rojo_granate"
-        android:textStyle="bold"/>
+        android:backgroundTint="@color/rojo_claro"
+        android:textColor="@android:color/white"
+        android:textSize="18sp"
+        android:layout_marginBottom="20dp" />
+
 </LinearLayout>

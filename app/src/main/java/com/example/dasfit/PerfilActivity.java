@@ -24,7 +24,7 @@ public class PerfilActivity extends AppCompatActivity {
     private TextView tvNombrePerfil, tvEntrenamientos, tvCorreoPerfil;
     private Spinner spinnerGenero;
     private Button btnVerEntrenamientos, btnVolverPerfil;
-    private ImageButton btnEditarNombre, btnAjustes;
+    private ImageButton btnEditarNombre;
     private String nombreUsuario = "Tu Nombre";
     private String correoUsuario = "ejemplo@gmail.com";
     private int entrenamientosRegistrados = 0;
@@ -41,7 +41,6 @@ public class PerfilActivity extends AppCompatActivity {
         spinnerGenero = findViewById(R.id.spinnerGenero);
         btnVerEntrenamientos = findViewById(R.id.btnVerEntrenamientos);
         btnEditarNombre = findViewById(R.id.btnEditarNombre);
-        btnAjustes = findViewById(R.id.btnAjustes);
         btnVolverPerfil = findViewById(R.id.btnVolverPerfil);
 
         // Cargar datos simulados
@@ -66,11 +65,6 @@ public class PerfilActivity extends AppCompatActivity {
             startActivity(intent);
         });
 
-        // Botón de ajustes (implementaremos cambio de idioma después)
-        btnAjustes.setOnClickListener(v -> {
-            // Aquí podemos abrir un menú para cambiar el idioma
-        });
-
         btnVolverPerfil.setOnClickListener(v -> {
             Intent intent = new Intent(PerfilActivity.this, MainActivity.class);
             intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_NEW_TASK);
@@ -82,12 +76,6 @@ public class PerfilActivity extends AppCompatActivity {
         btnEditarNombre.setOnClickListener(v -> {
             mostrarDialogoEditarPerfil();
         });
-
-        btnAjustes.setOnClickListener(v -> {
-            Intent intent = new Intent(PerfilActivity.this, SettingsActivity.class);
-            startActivity(intent);
-        });
-
     }
 
     // Método para mostrar un diálogo y editar el nombre

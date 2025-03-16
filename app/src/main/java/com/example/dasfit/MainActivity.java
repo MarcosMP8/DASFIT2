@@ -27,7 +27,6 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        aplicarPreferencias(); // Aplicar idioma y modo oscuro antes de cargar la UI
         setContentView(R.layout.activity_main);
 
         Button btnRegistrar = findViewById(R.id.btnRegistrarEntrenamiento);
@@ -40,7 +39,7 @@ public class MainActivity extends AppCompatActivity {
         });
 
         btnExplorar.setOnClickListener(v -> {
-            Intent intent = new Intent(MainActivity.this, MainActivity.class); // O ajusta la actividad correcta
+            Intent intent = new Intent(MainActivity.this, ExplorarRutinasActivity.class);
             startActivity(intent);
         });
 
@@ -74,21 +73,5 @@ public class MainActivity extends AppCompatActivity {
         Intent intent = new Intent(Settings.ACTION_REQUEST_SCHEDULE_EXACT_ALARM);
         intent.setData(Uri.parse("package:" + getPackageName()));
         startActivity(intent);
-    }
-
-    private void aplicarPreferencias() {
-        SharedPreferences prefs = getSharedPreferences("app_prefs", MODE_PRIVATE);
-        String idioma = prefs.getString("idioma", "es");
-        boolean esModoOscuro = prefs.getBoolean("modo_oscuro", false);
-
-        // Aplicar idioma antes de cargar la UI
-        Locale locale = new Locale(idioma);
-        Locale.setDefault(locale);
-        Configuration config = new Configuration();
-        config.setLocale(locale);
-        getResources().updateConfiguration(config, getResources().getDisplayMetrics());
-
-        // Aplicar modo oscuro
-        AppCompatDelegate.setDefaultNightMode(esModoOscuro ? AppCompatDelegate.MODE_NIGHT_YES : AppCompatDelegate.MODE_NIGHT_NO);
     }
 }
