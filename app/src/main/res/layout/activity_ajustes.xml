@@ -52,7 +52,6 @@
                 android:id="@+id/spinnerIdioma"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:entries="@array/languages"
                 android:spinnerMode="dropdown"
                 android:layout_marginTop="8dp"/>
 

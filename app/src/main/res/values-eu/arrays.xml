@@ -1,0 +1,7 @@
+<resources>
+    <string-array name="generos">
+        <item>Gizon</item>
+        <item>Emakume</item>
+        <item>Inolako</item>
+    </string-array>
+</resources>

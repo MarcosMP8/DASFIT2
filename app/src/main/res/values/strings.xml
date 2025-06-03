@@ -72,4 +72,6 @@
     <string name="error_conexion">Error de conexión</string>
     <string name="foto_actualizada">Foto actualizada correctamente</string>
     <string name="fallo_red">Fallo de red: %1$s</string>
+    <string name="volver_a_login">Volver a Iniciar Sesión</string>
+    <string name="ya_tienes_cuenta">¿Ya tienes cuenta?</string>
 </resources>

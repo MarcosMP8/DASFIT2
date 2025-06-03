@@ -23,8 +23,8 @@ import java.util.Locale;
 public class LoginActivity extends BaseActivity {
 
     private EditText etNombre, etCorreo, etContrasena;
-    private Button btnRegistro, btnLogin, btnIrARegistro;
-    private TextView tvPregunta;
+    private Button btnRegistro, btnLogin, btnIrARegistro, btnVolverLogin;
+    private TextView tvPregunta, tvVolverLogin;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,10 +37,14 @@ public class LoginActivity extends BaseActivity {
         btnRegistro   = findViewById(R.id.btnRegistro);
         btnLogin      = findViewById(R.id.btnLogin);
         btnIrARegistro= findViewById(R.id.btnIrARegistro);
+        btnVolverLogin = findViewById(R.id.btnVolverLogin);
         tvPregunta    = findViewById(R.id.tvPregunta);
+        tvVolverLogin    = findViewById(R.id.tvVolverLogin);
 
         etNombre.setVisibility(View.GONE);
         btnRegistro.setVisibility(View.GONE);
+        btnVolverLogin.setVisibility(View.GONE);
+        tvVolverLogin.setVisibility(View.GONE);
 
         btnRegistro.setOnClickListener(v -> registrarUsuario());
         btnLogin.setOnClickListener(v -> iniciarSesion());
@@ -51,6 +55,18 @@ public class LoginActivity extends BaseActivity {
             btnLogin.setVisibility(View.GONE);
             btnIrARegistro.setVisibility(View.GONE);
             tvPregunta.setVisibility(View.GONE);
+            btnVolverLogin.setVisibility(View.VISIBLE);
+            tvVolverLogin.setVisibility(View.VISIBLE);
+        });
+
+        btnVolverLogin.setOnClickListener(v -> {
+            etNombre.setVisibility(View.GONE);
+            btnRegistro.setVisibility(View.GONE);
+            btnLogin.setVisibility(View.VISIBLE);
+            btnIrARegistro.setVisibility(View.VISIBLE);
+            tvPregunta.setVisibility(View.VISIBLE);
+            btnVolverLogin.setVisibility(View.GONE);
+            tvVolverLogin.setVisibility(View.GONE);
         });
     }
 

@@ -7,7 +7,6 @@
     android:padding="24dp"
     android:background="?attr/colorOnPrimaryContainer">
 
-    <!-- Título principal -->
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -25,7 +24,6 @@
         android:textColor="?attr/colorOnPrimary"
         android:layout_marginBottom="40dp" />
 
-    <!-- Botón Registrar Entrenamiento -->
     <Button
         android:id="@+id/btnRegistrarEntrenamiento"
         android:layout_width="match_parent"
@@ -36,7 +34,6 @@
         android:textSize="18sp"
         android:layout_marginBottom="20dp" />
 
-    <!-- Botón Explorar Rutinas -->
     <Button
         android:id="@+id/btnExplorarRutinas"
         android:layout_width="match_parent"
@@ -47,25 +44,39 @@
         android:textSize="18sp"
         android:layout_marginBottom="20dp" />
 
-    <!-- Botón Mi Perfil -->
-    <Button
-        android:id="@+id/btnMiPerfil"
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="60dp"
-        android:text="@string/mi_perfil"
-        android:backgroundTint="?attr/colorPrimary"
-        android:textColor="?attr/colorOnPrimary"
-        android:textSize="18sp"
-        android:layout_marginBottom="20dp" />
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="20dp"
+        android:gravity="center">
 
-    <!-- Botón Busca tu gimnasio -->
-    <Button
-        android:id="@+id/btnBuscarGym"
-        android:layout_width="match_parent"
-        android:layout_height="60dp"
-        android:text="@string/buscar_gimnasio"
-        android:backgroundTint="?attr/colorPrimary"
-        android:textColor="?attr/colorOnPrimary"
-        android:textSize="18sp"
-        android:layout_marginTop="20dp"/>
+        <Button
+            android:id="@+id/btnMiPerfil"
+            android:layout_width="0dp"
+            android:layout_height="120dp"
+            android:layout_marginEnd="10dp"
+            android:layout_weight="1"
+            android:backgroundTint="?attr/colorPrimary"
+            android:drawableTop="@drawable/ic_user"
+            android:gravity="center"
+            android:paddingTop="8dp"
+            android:text="@string/mi_perfil"
+            android:textColor="?attr/colorOnPrimary"
+            android:textSize="18sp" />
+
+        <Button
+            android:id="@+id/btnBuscarGym"
+            android:layout_width="0dp"
+            android:layout_height="120dp"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:drawableTop="@drawable/ic_ubi"
+            android:paddingTop="8dp"
+            android:text="@string/buscar_gimnasio"
+            android:textSize="18sp"
+            android:textColor="?attr/colorOnPrimary"
+            android:backgroundTint="?attr/colorPrimary"
+            android:layout_marginStart="10dp" />
+    </LinearLayout>
 </LinearLayout>

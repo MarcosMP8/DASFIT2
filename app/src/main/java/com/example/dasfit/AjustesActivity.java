@@ -12,6 +12,7 @@ import androidx.appcompat.widget.SwitchCompat;
 import androidx.appcompat.app.AppCompatDelegate;
 
 import com.example.dasfit.R;
+import com.example.dasfit.adapter.LanguageSpinnerAdapter;
 import com.google.android.material.button.MaterialButton;
 
 import java.util.Locale;
@@ -42,12 +43,7 @@ public class AjustesActivity extends BaseActivity {
         String english = langs[1];
         String basque  = langs[2];
 
-        ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(
-                this,
-                R.array.languages,
-                android.R.layout.simple_spinner_item
-        );
-        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        LanguageSpinnerAdapter adapter = new LanguageSpinnerAdapter(this, langs);
         spinnerLanguage.setAdapter(adapter);
 
         SharedPreferences prefs = getSharedPreferences(PREFS_NAME, MODE_PRIVATE);
