@@ -54,15 +54,15 @@ public class EjercicioAdapter extends RecyclerView.Adapter<EjercicioAdapter.View
         // Botón para eliminar ejercicio
         holder.btnEliminar.setOnClickListener(v -> {
             new AlertDialog.Builder(context)
-                    .setTitle("Eliminar Ejercicio")
-                    .setMessage("¿Seguro que deseas eliminar este ejercicio?")
-                    .setPositiveButton("Sí", (dialog, which) -> {
+                    .setTitle(context.getString(R.string.eliminar_ejercicio))
+                    .setMessage(context.getString(R.string.eliminar_ejercicio_confirmacion))
+                    .setPositiveButton(context.getString(R.string.si), (dialog, which) -> {
                         gestorRutinas.eliminarEjercicio(ejercicio);
                         listaEjercicios.remove(position);
                         notifyItemRemoved(position);
-                        Toast.makeText(context, "Ejercicio eliminado", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(context,context.getString(R.string.ejercicio_eliminado), Toast.LENGTH_SHORT).show();
                     })
-                    .setNegativeButton("Cancelar", null)
+                    .setNegativeButton(context.getString(R.string.cancelar), null)
                     .show();
         });
     }

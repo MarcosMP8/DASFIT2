@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="24dp"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:background="?attr/colorOnPrimaryContainer">
+
+    <TextView
+        android:text="@string/login_register_title"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        android:textColor="?attr/colorOnPrimary"
+        android:layout_marginBottom="32dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <EditText
+        android:id="@+id/etNombre"
+        android:hint="@string/nombre_solo_registro"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        android:textColor="?attr/colorOnPrimary"
+        android:backgroundTint="?attr/colorOnPrimary"
+        android:layout_marginBottom="12dp" />
+
+    <EditText
+        android:id="@+id/etCorreo"
+        android:hint="@string/correo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="?attr/colorOnPrimary"
+        android:backgroundTint="?attr/colorOnPrimary"
+        android:inputType="textEmailAddress"
+        android:layout_marginBottom="12dp" />
+
+    <EditText
+        android:id="@+id/etContrasena"
+        android:hint="@string/contrasena"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="?attr/colorOnPrimary"
+        android:backgroundTint="?attr/colorOnPrimary"
+        android:inputType="textPassword"
+        android:layout_marginBottom="24dp" />
+
+    <Button
+        android:id="@+id/btnLogin"
+        android:text="@string/iniciar_sesion"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/button_selector"
+        android:textColor="?attr/colorOnPrimary"
+        android:textStyle="bold"
+        android:layout_marginBottom="12dp" />
+
+    <TextView
+        android:id="@+id/tvPregunta"
+        android:text="@string/no_tienes_cuenta"
+        android:textColor="?attr/colorOnPrimary"
+        android:textStyle="italic"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp" />
+
+    <Button
+        android:id="@+id/btnIrARegistro"
+        android:text="@string/registrarse"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/button_selector"
+        android:textColor="?attr/colorOnPrimary"
+        android:textStyle="bold"
+        android:layout_marginTop="8dp" />
+
+    <Button
+        android:id="@+id/btnRegistro"
+        android:text="@string/confirmar_registro"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/button_selector"
+        android:textColor="?attr/colorOnPrimary"
+        android:textStyle="bold"
+        android:visibility="gone"
+        android:layout_marginTop="16dp" />
+</LinearLayout>

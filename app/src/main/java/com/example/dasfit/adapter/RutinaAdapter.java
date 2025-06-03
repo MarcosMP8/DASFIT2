@@ -65,7 +65,6 @@ public class RutinaAdapter extends RecyclerView.Adapter<RutinaAdapter.ViewHolder
             btnVerRutina = itemView.findViewById(R.id.btnVerRutina);
         }
     }
-
 }
 
 

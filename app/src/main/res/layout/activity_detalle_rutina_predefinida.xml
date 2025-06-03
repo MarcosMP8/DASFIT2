@@ -5,15 +5,15 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:padding="16dp"
-    android:background="@color/gris_claro">
+    android:background="?attr/colorOnPrimaryContainer">
 
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbar"
         android:layout_width="match_parent"
         android:layout_height="?attr/actionBarSize"
         android:background="@android:color/transparent"
-        app:title="Detalles de la Rutina"
-        app:titleTextColor="@color/rojo_granate"
+        app:title="@string/detalles_rutina"
+        app:titleTextColor="?attr/colorOnPrimary"
         app:navigationIcon="@drawable/ic_back"
         app:popupTheme="@style/ThemeOverlay.AppCompat.Light"/>
 
@@ -21,10 +21,10 @@
         android:id="@+id/tvTituloRutina"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:text="@string/titulo_rutina"
         android:textSize="24sp"
-        android:textColor="@color/rojo_granate"
+        android:textColor="?attr/colorOnPrimary"
         android:textStyle="bold"
-        android:text="Rutina X"
         android:paddingBottom="12dp"
         android:textAlignment="center"/>
 
@@ -32,11 +32,11 @@
         android:id="@+id/tvDetallesRutina"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:text="@string/ejercicios_aqui"
         android:textSize="18sp"
-        android:textColor="@color/rojo_granate"
+        android:textColor="?attr/colorOnPrimary"
         android:padding="10dp"
-        android:lineSpacingExtra="10dp"
-        android:text="Ejercicios aquí"/>
+        android:lineSpacingExtra="10dp"/>
 
     <!-- Botón para volver atrás -->
     <Button
@@ -44,8 +44,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:background="@drawable/button_selector"
-        android:text="Volver"
-        android:textColor="@color/rojo_granate"
+        android:text="@string/volver"
+        android:textColor="?attr/colorOnPrimary"
         android:textStyle="bold"
         android:padding="12dp"
         android:layout_gravity="center"

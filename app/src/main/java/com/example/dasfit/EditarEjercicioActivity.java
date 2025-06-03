@@ -5,11 +5,11 @@ import android.os.Bundle;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
-import androidx.appcompat.app.AppCompatActivity;
+
 import com.example.dasfit.gestor.GestorRutinas;
 import com.example.dasfit.modelo.Ejercicio;
 
-public class EditarEjercicioActivity extends AppCompatActivity {
+public class EditarEjercicioActivity extends BaseActivity {
     private EditText etNombre, etRepeticiones, etPeso, etDuracion;
     private Button btnActualizar;
     private GestorRutinas gestorRutinas;
@@ -23,7 +23,7 @@ public class EditarEjercicioActivity extends AppCompatActivity {
 
         ejercicioId = getIntent().getIntExtra("ejercicio_id", -1);
         if (ejercicioId == -1) {
-            Toast.makeText(this, "Error: No se pudo obtener el ejercicio", Toast.LENGTH_LONG).show();
+            Toast.makeText(this, (R.string.error_obtener_ejercicio), Toast.LENGTH_LONG).show();
             finish();
             return;
         }
@@ -32,7 +32,7 @@ public class EditarEjercicioActivity extends AppCompatActivity {
         ejercicio = gestorRutinas.obtenerEjercicioPorId(ejercicioId);
 
         if (ejercicio == null) {
-            Toast.makeText(this, "Error: Ejercicio no encontrado", Toast.LENGTH_LONG).show();
+            Toast.makeText(this, getString(R.string.error_ejercicio_no_encontrado), Toast.LENGTH_LONG).show();
             finish();
             return;
         }
@@ -55,15 +55,12 @@ public class EditarEjercicioActivity extends AppCompatActivity {
             ejercicio.setDuracion(Integer.parseInt(etDuracion.getText().toString()));
 
             gestorRutinas.actualizarEjercicio(ejercicio);
-            Toast.makeText(this, "Ejercicio actualizado", Toast.LENGTH_SHORT).show();
-
-            // Devolver resultado a DetalleRutinaActivity
+            Toast.makeText(this, getString(R.string.ejercicio_actualizado), Toast.LENGTH_SHORT).show();
             Intent resultIntent = new Intent();
             setResult(RESULT_OK, resultIntent);
             finish();
         });
 
-        // Botón para volver a la pantalla anterior
         Button btnVolver = findViewById(R.id.btnVolver);
         btnVolver.setOnClickListener(v -> finish());
     }

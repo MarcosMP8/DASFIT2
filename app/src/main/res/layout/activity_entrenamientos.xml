@@ -5,19 +5,17 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:padding="16dp"
-    android:background="@color/gris_claro">
-
+    android:background="?attr/colorOnPrimaryContainer">
 
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbar"
         android:layout_width="match_parent"
         android:layout_height="?attr/actionBarSize"
         android:background="@android:color/transparent"
-        app:title="Entrenamientos"
-        app:titleTextColor="@color/rojo_granate"
+        app:title="@string/entrenamientos"
+        app:titleTextColor="?attr/colorOnPrimary"
         app:navigationIcon="@drawable/ic_back"
         app:popupTheme="@style/ThemeOverlay.AppCompat.Light"/>
-
 
     <!-- Botón para añadir una nueva rutina -->
     <Button
@@ -25,8 +23,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:background="@drawable/button_selector"
-        android:text="Añadir Rutina"
-        android:textColor="@color/rojo_granate"
+        android:text="@string/anadir_rutina"
+        android:textColor="?attr/colorOnPrimary"
         android:textStyle="bold"
         android:padding="10dp"
         android:layout_gravity="center"/>
@@ -45,8 +43,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:background="@drawable/button_selector"
-        android:text="Volver"
-        android:textColor="@color/rojo_granate"
+        android:text="@string/volver"
+        android:textColor="?attr/colorOnPrimary"
         android:textStyle="bold"
         android:padding="10dp"
         android:layout_gravity="center"

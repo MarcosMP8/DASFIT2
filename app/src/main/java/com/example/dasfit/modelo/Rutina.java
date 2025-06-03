@@ -14,7 +14,7 @@ public class Rutina {
     private String nombre;
 
     @Ignore
-    private List<Ejercicio> ejercicios; // Ignoramos porque Room no maneja listas directamente
+    private List<Ejercicio> ejercicios;
 
     public Rutina(String nombre) {
         this.nombre = nombre;

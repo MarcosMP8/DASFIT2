@@ -3,65 +3,65 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:padding="16dp"
-    android:background="@color/gris_claro">
+    android:background="?attr/colorOnPrimaryContainer">
 
     <EditText
         android:id="@+id/etNombreEjercicio"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Nombre del ejercicio"
-        android:textColor="@color/rojo_granate"
-        android:backgroundTint="@color/rojo_granate"/>
+        android:hint="@string/nombre_ejercicio"
+        android:textColor="?attr/colorOnPrimary"
+        android:backgroundTint="?attr/colorOnPrimary" />
 
     <EditText
         android:id="@+id/etRepeticiones"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Repeticiones"
-        android:textColor="@color/rojo_granate"
-        android:backgroundTint="@color/rojo_granate"
-        android:inputType="number"/>
+        android:hint="@string/repeticiones"
+        android:textColor="?attr/colorOnPrimary"
+        android:backgroundTint="?attr/colorOnPrimary"
+        android:inputType="number" />
 
     <EditText
         android:id="@+id/etPeso"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Peso (kg) - Opcional"
-        android:textColor="@color/rojo_granate"
-        android:backgroundTint="@color/rojo_granate"
-        android:inputType="numberDecimal"/>
+        android:hint="@string/peso_opcional"
+        android:textColor="?attr/colorOnPrimary"
+        android:backgroundTint="?attr/colorOnPrimary"
+        android:inputType="numberDecimal" />
 
     <EditText
         android:id="@+id/etDuracion"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Duración (segundos) - Opcional"
-        android:textColor="@color/rojo_granate"
-        android:backgroundTint="@color/rojo_granate"
-        android:inputType="number"/>
+        android:hint="@string/duracion_opcional"
+        android:textColor="?attr/colorOnPrimary"
+        android:backgroundTint="?attr/colorOnPrimary"
+        android:inputType="number" />
 
     <Button
         android:id="@+id/btnGuardarEjercicio"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:background="@drawable/button_selector"
-        android:text="Guardar Ejercicio"
-        android:textColor="@color/rojo_granate"
+        android:text="@string/guardar_ejercicio"
+        android:textColor="?attr/colorOnPrimary"
         android:textStyle="bold"
         android:padding="10dp"
         android:layout_gravity="center"
-        android:layout_marginTop="10dp"/>
+        android:layout_marginTop="10dp" />
 
     <Button
         android:id="@+id/btnVolver"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:background="@drawable/button_selector"
-        android:text="Volver"
-        android:textColor="@color/rojo_granate"
+        android:text="@string/volver"
+        android:textColor="?attr/colorOnPrimary"
         android:textStyle="bold"
         android:padding="10dp"
         android:layout_gravity="center"
-        android:layout_marginTop="10dp"/>
+        android:layout_marginTop="10dp" />
 
 </LinearLayout>

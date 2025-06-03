@@ -43,11 +43,8 @@ public class NotificationHelper {
 
         NotificationManager manager = (NotificationManager) context.getSystemService(Context.NOTIFICATION_SERVICE);
 
-        // Generar un ID único usando el tiempo actual en milisegundos
         int uniqueNotificationId = (int) System.currentTimeMillis();
 
         manager.notify(uniqueNotificationId, builder.build());
     }
-
-
 }

@@ -5,24 +5,24 @@
     android:orientation="vertical"
     android:gravity="center"
     android:padding="24dp"
-    android:background="@color/gris_claro">
+    android:background="?attr/colorOnPrimaryContainer">
 
     <!-- Título principal -->
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="DASFIT"
-        android:textSize="32sp"
+        android:text="@string/app_name"
+        android:textSize="54sp"
         android:textStyle="bold"
-        android:textColor="@color/rojo_granate"
+        android:textColor="?attr/colorOnPrimary"
         android:layout_marginBottom="10dp" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Bienvenido al cambio"
+        android:text="@string/bienvenido_subtitulo"
         android:textSize="20sp"
-        android:textColor="@color/rojo_granate"
+        android:textColor="?attr/colorOnPrimary"
         android:layout_marginBottom="40dp" />
 
     <!-- Botón Registrar Entrenamiento -->
@@ -30,9 +30,9 @@
         android:id="@+id/btnRegistrarEntrenamiento"
         android:layout_width="match_parent"
         android:layout_height="60dp"
-        android:text="Registrar Entrenamiento"
-        android:backgroundTint="@color/rojo_claro"
-        android:textColor="@android:color/white"
+        android:text="@string/registrar_entrenamiento"
+        android:backgroundTint="?attr/colorPrimary"
+        android:textColor="?attr/colorOnPrimary"
         android:textSize="18sp"
         android:layout_marginBottom="20dp" />
 
@@ -41,9 +41,9 @@
         android:id="@+id/btnExplorarRutinas"
         android:layout_width="match_parent"
         android:layout_height="60dp"
-        android:text="Explorar Rutinas"
-        android:backgroundTint="@color/rojo_claro"
-        android:textColor="@android:color/white"
+        android:text="@string/explorar_rutinas"
+        android:backgroundTint="?attr/colorPrimary"
+        android:textColor="?attr/colorOnPrimary"
         android:textSize="18sp"
         android:layout_marginBottom="20dp" />
 
@@ -52,10 +52,20 @@
         android:id="@+id/btnMiPerfil"
         android:layout_width="match_parent"
         android:layout_height="60dp"
-        android:text="Mi Perfil"
-        android:backgroundTint="@color/rojo_claro"
-        android:textColor="@android:color/white"
+        android:text="@string/mi_perfil"
+        android:backgroundTint="?attr/colorPrimary"
+        android:textColor="?attr/colorOnPrimary"
         android:textSize="18sp"
         android:layout_marginBottom="20dp" />
 
+    <!-- Botón Busca tu gimnasio -->
+    <Button
+        android:id="@+id/btnBuscarGym"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:text="@string/buscar_gimnasio"
+        android:backgroundTint="?attr/colorPrimary"
+        android:textColor="?attr/colorOnPrimary"
+        android:textSize="18sp"
+        android:layout_marginTop="20dp"/>
 </LinearLayout>

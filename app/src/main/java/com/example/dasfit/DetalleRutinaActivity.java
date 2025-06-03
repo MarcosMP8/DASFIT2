@@ -5,16 +5,18 @@ import android.os.Bundle;
 import android.util.Log;
 import android.widget.Button;
 import android.widget.Toast;
-import androidx.appcompat.app.AppCompatActivity;
+
 import androidx.appcompat.widget.Toolbar;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
+
 import com.example.dasfit.adapter.EjercicioAdapter;
 import com.example.dasfit.gestor.GestorRutinas;
 import com.example.dasfit.modelo.Ejercicio;
+
 import java.util.List;
 
-public class DetalleRutinaActivity extends AppCompatActivity {
+public class DetalleRutinaActivity extends BaseActivity {
     private RecyclerView recyclerViewEjercicios;
     private EjercicioAdapter ejercicioAdapter;
     private GestorRutinas gestorRutinas;
@@ -25,7 +27,6 @@ public class DetalleRutinaActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_detalle_rutina);
 
-        // Configurar Toolbar con botón de volver atrás sin color de fondo
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         if (getSupportActionBar() != null) {
@@ -36,7 +37,7 @@ public class DetalleRutinaActivity extends AppCompatActivity {
         rutinaId = getIntent().getIntExtra("rutina_id", -1);
         if (rutinaId == -1) {
             Log.e("DetalleRutinaActivity", "Error: ID de rutina no válido");
-            Toast.makeText(this, "Error: Rutina no encontrada", Toast.LENGTH_LONG).show();
+            Toast.makeText(this, getString(R.string.error_rutina_no_encontrada), Toast.LENGTH_LONG).show();
             finish();
             return;
         }
@@ -51,13 +52,12 @@ public class DetalleRutinaActivity extends AppCompatActivity {
 
         if (listaEjercicios.isEmpty()) {
             Log.d("DetalleRutinaActivity", "No hay ejercicios para esta rutina");
-            Toast.makeText(this, "No hay ejercicios en esta rutina", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, getString(R.string.sin_ejercicios), Toast.LENGTH_SHORT).show();
         }
 
         ejercicioAdapter = new EjercicioAdapter(this, listaEjercicios);
         recyclerViewEjercicios.setAdapter(ejercicioAdapter);
 
-        // Botón para añadir ejercicio
         Button btnAgregarEjercicio = findViewById(R.id.btnAgregarEjercicio);
         btnAgregarEjercicio.setOnClickListener(v -> {
             Intent intent = new Intent(DetalleRutinaActivity.this, AgregarEjercicioActivity.class);
@@ -65,7 +65,6 @@ public class DetalleRutinaActivity extends AppCompatActivity {
             startActivityForResult(intent, 1);
         });
 
-        // Botón para volver a la pantalla anterior
         Button btnVolver = findViewById(R.id.btnVolver);
         btnVolver.setOnClickListener(v -> finish());
     }
@@ -77,12 +76,7 @@ public class DetalleRutinaActivity extends AppCompatActivity {
             List<Ejercicio> listaEjercicios = gestorRutinas.getEjerciciosDeRutina(rutinaId);
             ejercicioAdapter = new EjercicioAdapter(this, listaEjercicios);
             recyclerViewEjercicios.setAdapter(ejercicioAdapter);
-            ejercicioAdapter.notifyDataSetChanged(); // 🔹 Refresca la lista inmediatamente
+            ejercicioAdapter.notifyDataSetChanged();
         }
-    }
-
-    @Override
-    public void onBackPressed() {
-        super.onBackPressed(); // Regresa a la actividad anterior
     }
 }

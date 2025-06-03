@@ -2,18 +2,19 @@ package com.example.dasfit;
 
 import android.os.Bundle;
 import android.util.Log;
-import android.widget.TextView;
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.widget.Toolbar;
+import android.text.SpannableString;
+import android.text.style.UnderlineSpan;
 import android.widget.Button;
+import android.widget.TextView;
+
+import androidx.appcompat.widget.Toolbar;
+
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
-import android.text.SpannableString;
-import android.text.style.UnderlineSpan;
 
-public class DetalleRutinaPredefinidaActivity extends AppCompatActivity {
+public class DetalleRutinaPredefinidaActivity extends BaseActivity {
     private TextView tvDetallesRutina;
 
     @Override
@@ -33,22 +34,20 @@ public class DetalleRutinaPredefinidaActivity extends AppCompatActivity {
             tvDetallesRutina.setText(cargarDetallesRutina(nombreRutina));
         }
 
-        // Botón de volver
         Button btnVolver = findViewById(R.id.btnVolver);
         btnVolver.setOnClickListener(v -> finish());
 
-        // Toolbar - Hacer que el botón de navegación funcione
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         if (getSupportActionBar() != null) {
             getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         }
-        toolbar.setNavigationOnClickListener(v -> finish()); // Cierra la actividad
+        toolbar.setNavigationOnClickListener(v -> finish());
     }
 
     private String cargarDetallesRutina(String nombreRutina) {
         StringBuilder detalles = new StringBuilder();
-        String nombreArchivo = nombreRutina.replace(" ", "") + ".txt"; // Convertir "Rutina de Fuerza" a "RutinadeFuerza.txt"
+        String nombreArchivo = nombreRutina.replace(" ", "") + ".txt";
 
         try {
             InputStream inputStream = getAssets().open(nombreArchivo);
@@ -60,9 +59,8 @@ public class DetalleRutinaPredefinidaActivity extends AppCompatActivity {
             reader.close();
         } catch (IOException e) {
             Log.e("DetalleRutina", "Error al leer el archivo " + nombreArchivo, e);
-            return "Error al cargar la rutina.";
+            return getString(R.string.error_cargar_rutina);
         }
         return detalles.toString();
     }
-
 }

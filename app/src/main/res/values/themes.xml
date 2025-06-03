@@ -2,8 +2,10 @@
     <style name="Theme.DASFIT" parent="Theme.Material3.DayNight.NoActionBar">
         <item name="android:fontFamily">@font/montserrat_regular</item>
         <item name="colorPrimary">@color/rojo_claro</item>
-        <item name="colorPrimaryVariant">@color/rojo_granate</item>
-        <item name="android:windowBackground">@color/gris_claro</item>
-        <item name="android:textColorPrimary">@color/rojo_granate</item>
+        <item name="colorOnPrimary">@color/rojo_granate</item>
+        <item name="colorOnPrimaryContainer">@color/gris_claro</item>
+        <item name="colorSecondary">@color/verde_petroleo</item>
+        <item name="colorOnSecondary">@color/verde_menta</item>
+        <item name="colorOnSecondaryContainer">@color/antracita</item>
     </style>
 </resources>

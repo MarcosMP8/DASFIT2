@@ -5,7 +5,7 @@
     android:orientation="horizontal"
     android:padding="10dp"
     android:gravity="center_vertical"
-    android:background="@color/gris_claro">
+    android:background="?attr/colorOnPrimaryContainer">
 
     <LinearLayout
         android:layout_width="0dp"
@@ -17,18 +17,18 @@
             android:id="@+id/tvNombreEjercicio"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Nombre del ejercicio"
+            android:text="@string/nombre_ejercicio"
             android:textSize="18sp"
             android:textStyle="bold"
-            android:textColor="@color/rojo_granate"/>
+            android:textColor="?attr/colorOnPrimary"/>
 
         <TextView
             android:id="@+id/tvDetallesEjercicio"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Detalles del ejercicio"
+            android:text="@string/detalles_ejercicio"
             android:textSize="14sp"
-            android:textColor="@color/rojo_claro"/>
+            android:textColor="?attr/colorPrimary"/>
     </LinearLayout>
 
     <ImageButton

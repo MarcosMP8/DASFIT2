@@ -1,4 +1,3 @@
-<?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
@@ -12,10 +11,10 @@
         android:layout_height="wrap_content"
         android:layout_weight="1"
         android:textSize="20sp"
-        android:textColor="@color/rojo_granate"
+        android:textColor="?attr/colorOnPrimary"
         android:textStyle="bold"
         android:padding="8dp"
-        android:text="Nombre de la Rutina"/>
+        android:text="@string/nombre_rutina" />
 
     <ImageButton
         android:id="@+id/btnVerRutina"
@@ -23,6 +22,6 @@
         android:layout_height="48dp"
         android:background="?attr/selectableItemBackground"
         android:src="@android:drawable/ic_menu_view"
-        android:contentDescription="Ver detalles de la rutina"
-        android:padding="8dp"/>
+        android:contentDescription="@string/desc_ver_detalles_rutina"
+        android:padding="8dp" />
 </LinearLayout>

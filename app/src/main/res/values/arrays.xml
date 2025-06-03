@@ -4,4 +4,9 @@
         <item>Mujer</item>
         <item>Indiferente</item>
     </string-array>
+    <string-array name="languages">
+        <item>Español 🇪🇸</item>
+        <item>English 🇬🇧</item>
+        <item>Euskara 🏴󠁥󠁳󠁰󠁶󠁿</item>
+    </string-array>
 </resources>

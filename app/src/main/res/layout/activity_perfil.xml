@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:background="@color/gris_claro"
+    android:background="?attr/colorOnPrimaryContainer"
     android:padding="24dp">
 
     <!-- Toolbar con título "Perfil" y botón de ajustes -->
@@ -16,11 +17,22 @@
             android:id="@+id/tvTituloPerfil"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Perfil"
+            android:text="@string/perfil"
             android:textSize="24sp"
             android:textStyle="bold"
-            android:textColor="@color/rojo_granate"
-            android:layout_centerHorizontal="true"/>
+            android:textColor="?attr/colorOnPrimary"
+            android:layout_centerHorizontal="true" />
+
+        <ImageButton
+            android:id="@+id/btnAjustes"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_alignParentEnd="true"
+            android:layout_marginEnd="-1dp"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:contentDescription="@string/ajustes"
+            android:src="@drawable/ic_settings"
+            app:tint="?attr/colorPrimary" />
     </RelativeLayout>
 
     <!-- Sección Nombre y Foto de Perfil -->
@@ -40,9 +52,10 @@
             android:background="@drawable/circle_border"/>
 
         <LinearLayout
+            android:id="@+id/layoutVista"
+            android:orientation="vertical"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:orientation="vertical"
             android:paddingLeft="20dp">
 
             <TextView
@@ -51,7 +64,7 @@
                 android:layout_height="wrap_content"
                 android:text="Tu nombre"
                 android:textSize="18sp"
-                android:textColor="@color/rojo_granate"
+                android:textColor="?attr/colorOnPrimary"
                 android:paddingBottom="8dp"/>
 
             <TextView
@@ -60,7 +73,45 @@
                 android:layout_height="wrap_content"
                 android:text="ejemplo@gmail.com"
                 android:textSize="16sp"
-                android:textColor="@color/rojo_granate"/>
+                android:textColor="?attr/colorOnPrimary"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/layoutEditar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:visibility="gone"
+            android:layout_marginTop="16dp"
+            android:paddingLeft="20dp"
+            android:paddingRight="20dp">
+
+            <EditText
+                android:id="@+id/etNombrePerfil"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/nuevo_nombre"
+                android:textColor="?attr/colorOnPrimary"
+                android:backgroundTint="?attr/colorOnPrimary"
+                android:layout_marginBottom="8dp" />
+
+            <EditText
+                android:id="@+id/etCorreoPerfil"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/nuevo_correo"
+                android:textColor="?attr/colorOnPrimary"
+                android:backgroundTint="?attr/colorOnPrimary"
+                android:layout_marginBottom="12dp" />
+
+            <Button
+                android:id="@+id/btnGuardarPerfil"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/guardar_cambios"
+                android:background="@drawable/button_selector"
+                android:textColor="?attr/colorOnPrimary"
+                android:textStyle="bold"/>
         </LinearLayout>
 
         <ImageButton
@@ -77,28 +128,17 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:entries="@array/generos"
-        android:background="@android:drawable/btn_dropdown"
-        android:textColor="@color/rojo_granate"
+        android:textColor="?attr/colorOnPrimary"
         android:layout_marginTop="16dp"/>
-
-    <!-- Contador de entrenamientos -->
-    <TextView
-        android:id="@+id/tvEntrenamientos"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Entrenamientos registrados: 0"
-        android:textSize="18sp"
-        android:textColor="@color/rojo_granate"
-        android:layout_marginTop="24dp"/>
 
     <!-- Botón para ver los entrenamientos -->
     <Button
         android:id="@+id/btnVerEntrenamientos"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Ver mis entrenamientos"
+        android:text="@string/ver_entrenamientos"
         android:background="@drawable/button_selector"
-        android:textColor="@color/rojo_granate"
+        android:textColor="?attr/colorOnPrimary"
         android:textStyle="bold"
         android:layout_marginTop="16dp"/>
 
@@ -107,11 +147,21 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:background="@drawable/button_selector"
-        android:text="Volver"
-        android:textColor="@color/rojo_granate"
+        android:text="@string/volver"
+        android:textColor="?attr/colorOnPrimary"
         android:textStyle="bold"
         android:padding="10dp"
         android:layout_gravity="center"
         android:layout_marginTop="16dp"/>
+
+    <Button
+        android:id="@+id/btnCerrarSesion"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/button_selector"
+        android:text="@string/cerrar_sesion"
+        android:textColor="?attr/colorOnPrimary"
+        android:textStyle="bold"
+        android:layout_marginTop="12dp" />
 
 </LinearLayout>

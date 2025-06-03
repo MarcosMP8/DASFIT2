@@ -1,6 +1,8 @@
 <resources>
     <color name="rojo_granate">#8B0000</color> <!-- Letras -->
     <color name="rojo_claro">#FF6347</color> <!-- Botones -->
-    <color name="gris_claro">#E0E0E0</color> <!-- Ajustado a un gris más visible -->
-    <color name="negro">#000000</color> <!-- Fondo oscuro -->
+    <color name="gris_claro">#E0E0E0</color> <!-- Fondo -->
+    <color name="verde_menta">#A3D9B1</color> <!-- Letras -->
+    <color name="verde_petroleo">#00695C</color> <!-- Botones -->
+    <color name="antracita">#2B2B2B</color> <!-- Fondo -->
 </resources>

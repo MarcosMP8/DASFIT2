@@ -29,11 +29,9 @@ public class GestorRutinas {
     public void eliminarRutina(Rutina rutina) {
         if (rutina == null) return;
 
-        // 🔹 Obtener la rutina de la base de datos antes de eliminarla
         Rutina rutinaBD = rutinaDao.obtenerRutinaPorId(rutina.getId());
         if (rutinaBD == null) return;
 
-        // 🔹 Primero eliminar los ejercicios asociados
         List<Ejercicio> ejercicios = ejercicioDao.obtenerEjerciciosDeRutina(rutina.getId());
         if (ejercicios != null && !ejercicios.isEmpty()) {
             for (Ejercicio ejercicio : ejercicios) {
@@ -41,12 +39,8 @@ public class GestorRutinas {
             }
         }
 
-        // 🔹 Ahora eliminar la rutina
         rutinaDao.eliminarRutina(rutinaBD);
     }
-
-
-
 
     public List<Rutina> getListaRutinas() {
         return rutinaDao.obtenerTodasRutinas();
@@ -65,12 +59,12 @@ public class GestorRutinas {
         ejercicioDao.eliminarEjercicio(ejercicio);
     }
 
-    // 🔹 Método para actualizar un ejercicio en la base de datos
+    // Método para actualizar un ejercicio en la base de datos
     public void actualizarEjercicio(Ejercicio ejercicio) {
         ejercicioDao.actualizarEjercicio(ejercicio);
     }
 
-    // 🔹 Método para obtener un ejercicio por ID
+    // Método para obtener un ejercicio por ID
     public Ejercicio obtenerEjercicioPorId(int id) {
         return ejercicioDao.obtenerEjercicioPorId(id);
     }

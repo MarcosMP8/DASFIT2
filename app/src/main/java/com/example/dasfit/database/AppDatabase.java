@@ -12,7 +12,7 @@ public abstract class AppDatabase extends RoomDatabase {
     private static volatile AppDatabase instancia;
 
     public abstract RutinaDao rutinaDao();
-    public abstract EjercicioDao ejercicioDao(); // Añadimos DAO de Ejercicios
+    public abstract EjercicioDao ejercicioDao();
 
     public static AppDatabase getDatabase(final Context context) {
         if (instancia == null) {

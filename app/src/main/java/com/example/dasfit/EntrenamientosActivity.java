@@ -1,23 +1,23 @@
 package com.example.dasfit;
 
 import android.content.DialogInterface;
-import android.content.Intent;
 import android.os.Bundle;
-import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
+
 import androidx.appcompat.app.AlertDialog;
-import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
+
 import com.example.dasfit.adapter.RutinaAdapter;
 import com.example.dasfit.gestor.GestorRutinas;
 import com.example.dasfit.modelo.Rutina;
+
 import java.util.List;
 
-public class EntrenamientosActivity extends AppCompatActivity {
+public class EntrenamientosActivity extends BaseActivity {
     private RecyclerView recyclerViewRutinas;
     private RutinaAdapter rutinaAdapter;
     private GestorRutinas gestorRutinas;
@@ -47,32 +47,29 @@ public class EntrenamientosActivity extends AppCompatActivity {
         rutinaAdapter = new RutinaAdapter(this, listaRutinas);
         recyclerViewRutinas.setAdapter(rutinaAdapter);
 
-        // Botón para agregar una nueva rutina
         btnAgregarRutina.setOnClickListener(v -> mostrarDialogoAgregarRutina());
-
-        // Botón para volver atrás
         btnVolver.setOnClickListener(v -> finish());
     }
 
     private void mostrarDialogoAgregarRutina() {
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
-        builder.setTitle("Nueva Rutina");
+        builder.setTitle(getString(R.string.nueva_rutina));
 
         final EditText input = new EditText(this);
         builder.setView(input);
 
-        builder.setPositiveButton("Guardar", (dialog, which) -> {
+        builder.setPositiveButton(getString(R.string.guardar_rutina), (dialog, which) -> {
             String nombreRutina = input.getText().toString().trim();
             if (!nombreRutina.isEmpty()) {
                 gestorRutinas.agregarRutina(new Rutina(nombreRutina));
                 actualizarListaRutinas();
-                Toast.makeText(this, "Rutina añadida", Toast.LENGTH_SHORT).show();
+                Toast.makeText(this, getString(R.string.rutina_anadida), Toast.LENGTH_SHORT).show();
             } else {
-                Toast.makeText(this, "El nombre no puede estar vacío", Toast.LENGTH_SHORT).show();
+                Toast.makeText(this, getString(R.string.nombre_vacio), Toast.LENGTH_SHORT).show();
             }
         });
 
-        builder.setNegativeButton("Cancelar", (dialog, which) -> dialog.dismiss());
+        builder.setNegativeButton(getString(R.string.cancelar), (dialog, which) -> dialog.dismiss());
 
         builder.show();
     }

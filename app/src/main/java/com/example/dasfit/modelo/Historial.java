@@ -2,7 +2,7 @@ package com.example.dasfit.modelo;
 
 public class Historial {
     private String fecha;
-    private String tipoActividad; // "gimnasio", "correr", "bicicleta"
+    private String tipoActividad;
     private int duracion;
 
     public Historial(String fecha, String tipoActividad, int duracion) {

@@ -4,7 +4,7 @@
     android:orientation="horizontal"
     android:padding="10dp"
     android:gravity="center_vertical"
-    android:background="@color/gris_claro">
+    android:background="?attr/colorOnPrimaryContainer">
 
     <LinearLayout
         android:layout_width="0dp"
@@ -16,12 +16,12 @@
             android:id="@+id/tvNombreRutina"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Nombre de la rutina"
+            android:text="@string/nombre_rutina"
             android:textSize="18sp"
             android:textStyle="bold"
-            android:textColor="@color/rojo_granate"
+            android:textColor="?attr/colorOnPrimary"
             android:clickable="false"
-            android:focusable="false"/> <!--  Deshabilitar clic en el nombre -->
+            android:focusable="false"/>
     </LinearLayout>
 
     <ImageButton
@@ -30,5 +30,4 @@
         android:layout_height="40dp"
         android:src="@android:drawable/ic_menu_view"
         android:background="?attr/selectableItemBackground"/>
-
 </LinearLayout>
