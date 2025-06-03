@@ -6,7 +6,6 @@
     android:padding="4dp"
     android:gravity="center_vertical">
 
-    <!-- TextView con el nombre del idioma -->
     <TextView
         android:id="@+id/tvLanguageName"
         android:layout_width="0dp"
@@ -15,7 +14,6 @@
         android:textColor="?attr/colorOnSurface"
         style="@style/TextAppearance.Material3.BodyLarge" />
 
-    <!-- ImageView pequeño, al final, para la bandera -->
     <ImageView
         android:id="@+id/imgFlag"
         android:layout_width="24dp"

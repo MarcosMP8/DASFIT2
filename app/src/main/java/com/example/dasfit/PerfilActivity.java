@@ -20,6 +20,7 @@ import android.widget.ImageView;
 
 import androidx.activity.result.ActivityResultLauncher;
 import androidx.activity.result.contract.ActivityResultContracts;
+import androidx.appcompat.widget.Toolbar;
 import androidx.core.content.ContextCompat;
 
 import com.bumptech.glide.Glide;
@@ -46,7 +47,7 @@ public class PerfilActivity extends BaseActivity {
     private EditText etNombrePerfil, etCorreoPerfil;
     private LinearLayout layoutVista, layoutEditar;
     private SharedPreferences prefs;
-    private Button btnGuardarPerfil, btnVolverPerfil, btnCerrarSesion;
+    private Button btnGuardarPerfil, btnCerrarSesion;
     private ImageButton btnEditar, btnAjustes;
     private ImageView ivPerfil;
     private static final String BASE_URL =
@@ -90,7 +91,6 @@ public class PerfilActivity extends BaseActivity {
         layoutEditar = findViewById(R.id.layoutEditar);
         btnEditar = findViewById(R.id.btnEditarNombre);
         btnGuardarPerfil = findViewById(R.id.btnGuardarPerfil);
-        btnVolverPerfil = findViewById(R.id.btnVolverPerfil);
         btnCerrarSesion = findViewById(R.id.btnCerrarSesion);
         ivPerfil = findViewById(R.id.ivPerfil);
         btnAjustes = findViewById(R.id.btnAjustes);
@@ -112,6 +112,14 @@ public class PerfilActivity extends BaseActivity {
                     .into(ivPerfil);
         }
 
+        Toolbar toolbar = findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
+        if (getSupportActionBar() != null) {
+            getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+            getSupportActionBar().setDisplayShowTitleEnabled(false);
+        }
+        toolbar.setNavigationOnClickListener(v -> onBackPressed());
+
         btnAjustes.setOnClickListener(v -> {
             Toast.makeText(this, getString(R.string.ajustes), Toast.LENGTH_SHORT).show();
             Intent intent = new Intent(PerfilActivity.this, AjustesActivity.class);
@@ -120,8 +128,6 @@ public class PerfilActivity extends BaseActivity {
 
         tvNombrePerfil.setText(nombre);
         tvCorreoPerfil.setText(correo);
-
-        btnVolverPerfil.setOnClickListener(v -> finish());
 
         btnCerrarSesion.setOnClickListener(v -> {
             SharedPreferences.Editor editor = prefs.edit();

@@ -17,7 +17,6 @@
         app:navigationIcon="@drawable/ic_back"
         app:popupTheme="@style/ThemeOverlay.AppCompat.Light"/>
 
-    <!-- Botón para añadir una nueva rutina -->
     <Button
         android:id="@+id/btnAgregarRutina"
         android:layout_width="wrap_content"
@@ -29,24 +28,10 @@
         android:padding="10dp"
         android:layout_gravity="center"/>
 
-    <!-- Lista de rutinas -->
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerViewRutinas"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="1"
         android:scrollbars="vertical"/>
-
-    <!-- Botón para volver atrás -->
-    <Button
-        android:id="@+id/btnVolver"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:background="@drawable/button_selector"
-        android:text="@string/volver"
-        android:textColor="?attr/colorOnPrimary"
-        android:textStyle="bold"
-        android:padding="10dp"
-        android:layout_gravity="center"
-        android:layout_marginTop="10dp"/>
 </LinearLayout>

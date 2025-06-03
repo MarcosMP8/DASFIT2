@@ -8,8 +8,6 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.appcompat.widget.Toolbar;
 
-import android.widget.Button;
-
 import com.example.dasfit.adapter.RutinaPredefinidaAdapter;
 
 import java.io.BufferedReader;
@@ -35,9 +33,6 @@ public class ExplorarRutinasActivity extends BaseActivity {
         listaRutinas = cargarRutinasDesdeArchivo();
         rutinaAdapter = new RutinaPredefinidaAdapter(listaRutinas, this::abrirDetalleRutina);
         recyclerViewRutinas.setAdapter(rutinaAdapter);
-
-        Button btnVolver = findViewById(R.id.btnVolver);
-        btnVolver.setOnClickListener(v -> finish());
 
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);

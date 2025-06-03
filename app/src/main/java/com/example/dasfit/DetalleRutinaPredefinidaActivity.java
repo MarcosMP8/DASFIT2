@@ -15,7 +15,6 @@ import java.io.InputStream;
 import java.io.InputStreamReader;
 
 public class DetalleRutinaPredefinidaActivity extends BaseActivity {
-    private TextView tvDetallesRutina;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,9 +32,6 @@ public class DetalleRutinaPredefinidaActivity extends BaseActivity {
 
             tvDetallesRutina.setText(cargarDetallesRutina(nombreRutina));
         }
-
-        Button btnVolver = findViewById(R.id.btnVolver);
-        btnVolver.setOnClickListener(v -> finish());
 
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);

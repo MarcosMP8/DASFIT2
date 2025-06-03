@@ -6,6 +6,8 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import androidx.appcompat.widget.Toolbar;
+
 import com.example.dasfit.gestor.GestorRutinas;
 import com.example.dasfit.modelo.Ejercicio;
 
@@ -20,6 +22,13 @@ public class EditarEjercicioActivity extends BaseActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_editar_ejercicio);
+
+        Toolbar toolbar = findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
+        if (getSupportActionBar() != null) {
+            getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        }
+        toolbar.setNavigationOnClickListener(v -> finish());
 
         ejercicioId = getIntent().getIntExtra("ejercicio_id", -1);
         if (ejercicioId == -1) {
@@ -60,8 +69,5 @@ public class EditarEjercicioActivity extends BaseActivity {
             setResult(RESULT_OK, resultIntent);
             finish();
         });
-
-        Button btnVolver = findViewById(R.id.btnVolver);
-        btnVolver.setOnClickListener(v -> finish());
     }
 }

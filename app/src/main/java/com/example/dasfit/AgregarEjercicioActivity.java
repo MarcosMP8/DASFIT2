@@ -6,6 +6,8 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import androidx.appcompat.widget.Toolbar;
+
 import com.example.dasfit.gestor.GestorRutinas;
 import com.example.dasfit.modelo.Ejercicio;
 
@@ -20,6 +22,13 @@ public class AgregarEjercicioActivity extends BaseActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_agregar_ejercicio);
 
+        Toolbar toolbar = findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
+        if (getSupportActionBar() != null) {
+            getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        }
+        toolbar.setNavigationOnClickListener(v -> onBackPressed());
+
         rutinaId = getIntent().getIntExtra("rutina_id", -1);
         if (rutinaId == -1) {
             Toast.makeText(this, getString(R.string.error_rutina_no_encontrada), Toast.LENGTH_LONG).show();
@@ -32,7 +41,6 @@ public class AgregarEjercicioActivity extends BaseActivity {
         etPeso = findViewById(R.id.etPeso);
         etDuracion = findViewById(R.id.etDuracion);
         btnGuardarEjercicio = findViewById(R.id.btnGuardarEjercicio);
-        Button btnVolver = findViewById(R.id.btnVolver);
 
         gestorRutinas = new GestorRutinas(this);
 
@@ -59,7 +67,5 @@ public class AgregarEjercicioActivity extends BaseActivity {
             setResult(RESULT_OK, new Intent());
             finish();
         });
-
-        btnVolver.setOnClickListener(v -> finish());
     }
 }

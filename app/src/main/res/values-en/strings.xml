@@ -73,4 +73,5 @@
     <string name="foto_actualizada">Photo updated successfully</string>
     <string name="fallo_red">Network failure: %1$s</string>
     <string name="volver_a_login">Back to Login</string>
+    <string name="ya_tienes_cuenta">Already have an account?</string>
 </resources>

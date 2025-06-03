@@ -21,7 +21,7 @@ public class EntrenamientosActivity extends BaseActivity {
     private RecyclerView recyclerViewRutinas;
     private RutinaAdapter rutinaAdapter;
     private GestorRutinas gestorRutinas;
-    private Button btnAgregarRutina, btnVolver;
+    private Button btnAgregarRutina;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,7 +39,6 @@ public class EntrenamientosActivity extends BaseActivity {
         recyclerViewRutinas.setLayoutManager(new LinearLayoutManager(this));
 
         btnAgregarRutina = findViewById(R.id.btnAgregarRutina);
-        btnVolver = findViewById(R.id.btnVolver);
 
         gestorRutinas = new GestorRutinas(this);
         List<Rutina> listaRutinas = gestorRutinas.getListaRutinas();
@@ -48,7 +47,6 @@ public class EntrenamientosActivity extends BaseActivity {
         recyclerViewRutinas.setAdapter(rutinaAdapter);
 
         btnAgregarRutina.setOnClickListener(v -> mostrarDialogoAgregarRutina());
-        btnVolver.setOnClickListener(v -> finish());
     }
 
     private void mostrarDialogoAgregarRutina() {

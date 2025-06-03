@@ -10,6 +10,7 @@ import android.widget.Spinner;
 
 import androidx.appcompat.widget.SwitchCompat;
 import androidx.appcompat.app.AppCompatDelegate;
+import androidx.appcompat.widget.Toolbar;
 
 import com.example.dasfit.R;
 import com.example.dasfit.adapter.LanguageSpinnerAdapter;
@@ -21,20 +22,25 @@ public class AjustesActivity extends BaseActivity {
 
     private Spinner spinnerLanguage;
     private SwitchCompat switchTheme;
-    private MaterialButton btnBack;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_ajustes);
 
+        Toolbar toolbar = findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
+        if (getSupportActionBar() != null) {
+            getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+            getSupportActionBar().setDisplayShowTitleEnabled(false);
+        }
+        toolbar.setNavigationOnClickListener(v -> onBackPressed());
+
         spinnerLanguage = findViewById(R.id.spinnerIdioma);
         switchTheme     = findViewById(R.id.switchTema);
-        btnBack         = findViewById(R.id.btnBackAjustes);
 
         setupLanguageSpinner();
         setupThemeSwitch();
-        setupBackButton();
     }
 
     private void setupLanguageSpinner() {
@@ -96,9 +102,5 @@ public class AjustesActivity extends BaseActivity {
                             : AppCompatDelegate.MODE_NIGHT_NO
             );
         });
-    }
-
-    private void setupBackButton() {
-        btnBack.setOnClickListener(v -> finish());
     }
 }

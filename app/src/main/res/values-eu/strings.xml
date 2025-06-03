@@ -73,4 +73,5 @@
     <string name="foto_actualizada">Argazkia behar bezala eguneratu da</string>
     <string name="fallo_red">Sare akatsa: %1$s</string>
     <string name="volver_a_login">Saioa hasteko bueltatu</string>
+    <string name="ya_tienes_cuenta">Jada kontua baduzu?</string>
 </resources>

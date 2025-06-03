@@ -7,11 +7,12 @@
     android:background="?attr/colorOnPrimaryContainer"
     android:padding="24dp">
 
-    <!-- Toolbar con título "Perfil" y botón de ajustes -->
-    <RelativeLayout
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:paddingBottom="16dp">
+        android:layout_height="?attr/actionBarSize"
+        android:background="@android:color/transparent"
+        app:navigationIcon="@drawable/ic_back">
 
         <TextView
             android:id="@+id/tvTituloPerfil"
@@ -21,21 +22,19 @@
             android:textSize="24sp"
             android:textStyle="bold"
             android:textColor="?attr/colorOnPrimary"
-            android:layout_centerHorizontal="true" />
+            android:layout_gravity="center" />
 
         <ImageButton
             android:id="@+id/btnAjustes"
             android:layout_width="40dp"
             android:layout_height="40dp"
-            android:layout_alignParentEnd="true"
-            android:layout_marginEnd="-1dp"
+            android:layout_gravity="end|center_vertical"
             android:background="?attr/selectableItemBackgroundBorderless"
             android:contentDescription="@string/ajustes"
             android:src="@drawable/ic_settings"
             app:tint="?attr/colorPrimary" />
-    </RelativeLayout>
+    </androidx.appcompat.widget.Toolbar>
 
-    <!-- Sección Nombre y Foto de Perfil -->
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -122,7 +121,6 @@
             android:background="@android:color/transparent"/>
     </LinearLayout>
 
-    <!-- Selector de Género -->
     <Spinner
         android:id="@+id/spinnerGenero"
         android:layout_width="match_parent"
@@ -131,7 +129,6 @@
         android:textColor="?attr/colorOnPrimary"
         android:layout_marginTop="16dp"/>
 
-    <!-- Botón para ver los entrenamientos -->
     <Button
         android:id="@+id/btnVerEntrenamientos"
         android:layout_width="match_parent"
@@ -143,18 +140,6 @@
         android:layout_marginTop="16dp"/>
 
     <Button
-        android:id="@+id/btnVolverPerfil"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:background="@drawable/button_selector"
-        android:text="@string/volver"
-        android:textColor="?attr/colorOnPrimary"
-        android:textStyle="bold"
-        android:padding="10dp"
-        android:layout_gravity="center"
-        android:layout_marginTop="16dp"/>
-
-    <Button
         android:id="@+id/btnCerrarSesion"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -163,5 +148,4 @@
         android:textColor="?attr/colorOnPrimary"
         android:textStyle="bold"
         android:layout_marginTop="12dp" />
-
 </LinearLayout>

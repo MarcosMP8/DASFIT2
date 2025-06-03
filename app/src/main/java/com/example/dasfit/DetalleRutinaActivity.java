@@ -64,9 +64,6 @@ public class DetalleRutinaActivity extends BaseActivity {
             intent.putExtra("rutina_id", rutinaId);
             startActivityForResult(intent, 1);
         });
-
-        Button btnVolver = findViewById(R.id.btnVolver);
-        btnVolver.setOnClickListener(v -> finish());
     }
 
     @Override
