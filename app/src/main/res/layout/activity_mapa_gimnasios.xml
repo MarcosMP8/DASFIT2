@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/coordinator_root"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <!-- 1. Mapa (MapView) ocupa toda la pantalla de fondo -->
+    <org.osmdroid.views.MapView
+        android:id="@+id/mapView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+    <!-- 2. BottomSheet -->
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
+        android:id="@+id/bottom_sheet"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_behavior="com.google.android.material.bottomsheet.BottomSheetBehavior"
+        app:behavior_peekHeight="80dp"
+        app:behavior_hideable="false">
+
+        <!-- CardView donde se muestra la información del gimnasio -->
+        <androidx.cardview.widget.CardView
+            android:id="@+id/card_gym_info"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            app:cardCornerRadius="12dp"
+            app:cardElevation="4dp"
+            android:visibility="gone">
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:padding="16dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <!-- Nombre del gimnasio -->
+                <TextView
+                    android:id="@+id/tv_gym_nombre"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textStyle="bold"
+                    android:textSize="18sp"
+                    android:text="Nombre Gimnasio"
+                    android:visibility="gone" />
+
+                <!-- Dirección -->
+                <TextView
+                    android:id="@+id/tv_gym_direccion"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="14sp"
+                    android:layout_marginTop="4dp"
+                    android:text="Dirección"
+                    android:visibility="gone" />
+
+                <!-- Horario -->
+                <TextView
+                    android:id="@+id/tv_gym_horario"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="14sp"
+                    android:layout_marginTop="4dp"
+                    android:text="Horario"
+                    android:visibility="gone" />
+
+                <!-- Web (enlace clickable) -->
+                <TextView
+                    android:id="@+id/tv_gym_web"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="14sp"
+                    android:autoLink="web"
+                    android:layout_marginTop="4dp"
+                    android:text="https://ejemplo.com"
+                    android:visibility="gone" />
+
+                <!-- Teléfono (enlace phone) -->
+                <TextView
+                    android:id="@+id/tv_gym_telefono"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="14sp"
+                    android:autoLink="phone"
+                    android:layout_marginTop="4dp"
+                    android:text="+34 123 456 789"
+                    android:visibility="gone" />
+
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

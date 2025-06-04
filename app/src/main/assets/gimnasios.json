@@ -1,0 +1,33 @@
+[
+  {
+    "nombre": "FitnessPark Bilbao",
+    "latitud": 43.2627,
+    "longitud": -2.9463,
+    "direccion": "Av. Lehendakari Aguirre, 29, 48014 Bilbao",
+    "horario": "L–V: 7:00–23:00, S–D: 9:00–21:00",
+    "web": "https://fitnesspark.com/bilbao",
+    "telefono": "+34 123 456 789",
+    "tipo": "FitnessPark"
+  },
+  {
+    "nombre": "BasicFit Bilbao",
+    "latitud": 43.2635,
+    "longitud": -2.9379,
+    "direccion": "C. Reina Mª Cristina, 33, 48004 Bilbao",
+    "horario": "L–V: 6:00–22:00, S–D: 8:00–20:00",
+    "web": "https://basic-fit.com/es/es/clubes/bilbao",
+    "telefono": "+34 987 654 321",
+    "tipo": "BasicFit"
+  },
+  {
+    "nombre": "DreamFit Bizkaia",
+    "latitud": 43.2550,
+    "longitud": -2.9230,
+    "direccion": "C. Indalecio Prieto, 5, 48009 Bilbao",
+    "horario": "L–V: 7:00–22:00, S–D: 9:00–20:00",
+    "web": "https://dreamfit.com/bilbao",
+    "telefono": "+34 456 789 123",
+    "tipo": "DreamFit"
+  }
+  // … y así tantos gimnasios como necesites …
+]

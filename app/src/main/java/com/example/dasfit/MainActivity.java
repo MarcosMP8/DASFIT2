@@ -52,7 +52,7 @@ public class MainActivity extends BaseActivity {
 
         btnBuscarGym.setOnClickListener(v -> {
             Toast.makeText(this, getString(R.string.buscar_gimnasio), Toast.LENGTH_SHORT).show();
-            startActivity(new Intent(MainActivity.this, MapActivity.class));
+            startActivity(new Intent(MainActivity.this, MapaGimnasiosActivity.class));
         });
 
         // Permiso de Location en runtime
