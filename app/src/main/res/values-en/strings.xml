@@ -74,4 +74,11 @@
     <string name="fallo_red">Network failure: %1$s</string>
     <string name="volver_a_login">Back to Login</string>
     <string name="ya_tienes_cuenta">Already have an account?</string>
+    <string name="gym_nombre">Gym Name</string>
+    <string name="gym_direccion">Address</string>
+    <string name="gym_horario">Schedule</string>
+    <string name="gym_info_direccion">Address: %1$s</string>
+    <string name="gym_info_horario">Schedule: %1$s</string>
+    <string name="permisos_localizacion_denegados">Location permissions denied. Location will not be shown.</string>
+    <string name="error_cargar_gimnasios">Error loading gym list</string>
 </resources>

@@ -11,6 +11,7 @@ import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
 import android.view.View;
+import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -41,45 +42,35 @@ import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.List;
 
-public class MapaGimnasiosActivity extends AppCompatActivity {
+public class MapaGimnasiosActivity extends BaseActivity {
 
     private static final int REQUEST_PERMISSIONS_REQUEST_CODE = 1001;
 
     private MapView mapView;
     private List<Gimnasio> listaGimnasios = new ArrayList<>();
 
-    // Campos para el BottomSheet
     private BottomSheetBehavior<CoordinatorLayout> sheetBehavior;
     private TextView tvNombre;
     private TextView tvDireccion;
     private TextView tvHorario;
     private TextView tvWeb;
     private TextView tvTelefono;
+    private ImageButton btnBack;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
-        // 1. Cargar configuración de osmdroid
-        Context ctx = getApplicationContext();
-        Configuration.getInstance().load(ctx, PreferenceManager.getDefaultSharedPreferences(ctx));
-
-        // 2. Asignar layout
         setContentView(R.layout.activity_mapa_gimnasios);
 
-        // 3. Vincular MapView
         mapView = findViewById(R.id.mapView);
         mapView.setTileSource(TileSourceFactory.MAPNIK);
-        // Ya no mostramos CustomZoomButtonsController explícitamente
         mapView.setMultiTouchControls(true);
 
-        // 4. Centrar en Indautxu/San Mamés con zoom más cercano
         org.osmdroid.api.IMapController mapController = mapView.getController();
-        mapController.setZoom(15.0); // Zoom 15 para zona urbana
+        mapController.setZoom(15.0);
         GeoPoint indautxuPoint = new GeoPoint(43.2640, -2.9350);
         mapController.setCenter(indautxuPoint);
 
-        // 5. Vincular views del BottomSheet
         CoordinatorLayout bottomSheet = findViewById(R.id.bottom_sheet);
         sheetBehavior = BottomSheetBehavior.from(bottomSheet);
         sheetBehavior.setState(BottomSheetBehavior.STATE_HIDDEN);
@@ -89,20 +80,20 @@ public class MapaGimnasiosActivity extends AppCompatActivity {
         tvHorario   = findViewById(R.id.tv_gym_horario);
         tvWeb       = findViewById(R.id.tv_gym_web);
         tvTelefono  = findViewById(R.id.tv_gym_telefono);
+        btnBack = findViewById(R.id.btn_back);
 
-        // 6. Cargar datos de gimnasios desde JSON
+        if (btnBack != null) {
+            btnBack.bringToFront();
+            btnBack.setOnClickListener(v -> {
+                finish();
+            });
+        }
+
         poblarListaGimnasios();
-
-        // 7. Añadir marcadores
         agregarMarcadores();
-
-        // 8. Solicitar permiso de localización si aún no está concedido
         pedirPermisos();
     }
 
-    /**
-     * Lee el JSON de assets/gimnasios.json y pobla la lista.
-     */
     private void poblarListaGimnasios() {
         try {
             InputStream is = getAssets().open("gimnasios.json");
@@ -129,7 +120,7 @@ public class MapaGimnasiosActivity extends AppCompatActivity {
             }
         } catch (IOException | JSONException e) {
             e.printStackTrace();
-            Toast.makeText(this, "Error cargando lista de gimnasios", Toast.LENGTH_LONG).show();
+            Toast.makeText(this, getString(R.string.error_cargar_gimnasios), Toast.LENGTH_LONG).show();
         }
     }
 
@@ -141,13 +132,11 @@ public class MapaGimnasiosActivity extends AppCompatActivity {
             marker.setPosition(punto);
             marker.setAnchor(Marker.ANCHOR_CENTER, Marker.ANCHOR_BOTTOM);
 
-            // Icono: vector tintado según tipo
             Drawable icono = obtenerIconoPorTipo(gym.getTipo());
             if (icono instanceof BitmapDrawable) {
                 marker.setIcon((BitmapDrawable) icono);
             }
 
-            // Al hacer clic, mostrar BottomSheet con los datos
             marker.setOnMarkerClickListener(new OnMarkerClickListener() {
                 @Override
                 public boolean onMarkerClick(Marker clickedMarker, MapView mapView) {
@@ -155,21 +144,18 @@ public class MapaGimnasiosActivity extends AppCompatActivity {
                     View card = findViewById(R.id.card_gym_info);
                     card.setVisibility(View.VISIBLE);
 
-                    // 2. Rellenar los TextView
                     tvNombre.setText(gym.getNombre());
-                    tvDireccion.setText("Dirección: " + gym.getDireccion());
-                    tvHorario.setText("Horario: " + gym.getHorario());
+                    tvDireccion.setText(getString(R.string.gym_info_direccion, gym.getDireccion()));
+                    tvHorario.setText(getString(R.string.gym_info_horario, gym.getHorario()));
                     tvWeb.setText(gym.getWeb());
                     tvTelefono.setText(gym.getTelefono());
 
-                    // 3. Marcar visible cada TextView (en el XML estaban “gone”)
                     tvNombre.setVisibility(View.VISIBLE);
                     tvDireccion.setVisibility(View.VISIBLE);
                     tvHorario.setVisibility(View.VISIBLE);
                     tvWeb.setVisibility(View.VISIBLE);
                     tvTelefono.setVisibility(View.VISIBLE);
 
-                    // 4. Expandir BottomSheet
                     sheetBehavior.setState(BottomSheetBehavior.STATE_EXPANDED);
                     return true;
                 }
@@ -180,9 +166,6 @@ public class MapaGimnasiosActivity extends AppCompatActivity {
         mapView.invalidate();
     }
 
-    /**
-     * Convierte el vector ic_ubi.xml en un BitmapDrawable tintado del color indicado.
-     */
     private Drawable getTintedMarkerDrawable(int color) {
         Drawable vector = ContextCompat.getDrawable(this, R.drawable.ic_ubi);
         if (vector == null) return null;
@@ -202,9 +185,6 @@ public class MapaGimnasiosActivity extends AppCompatActivity {
         return new BitmapDrawable(getResources(), bitmap);
     }
 
-    /**
-     * Selecciona un color de tintado para ic_ubi.xml según el tipo de gimnasio.
-     */
     private Drawable obtenerIconoPorTipo(String tipo) {
         switch (tipo) {
             case "FitnessPark":
@@ -277,9 +257,11 @@ public class MapaGimnasiosActivity extends AppCompatActivity {
             if (todosConcedidos) {
                 habilitarMiUbicacion();
             } else {
-                Toast.makeText(this,
-                        "Permisos de localización denegados. La ubicación no se mostrará.",
+                Toast.makeText(
+                        this,
+                        getString(R.string.permisos_localizacion_denegados),
                         Toast.LENGTH_LONG).show();
+
             }
         }
     }

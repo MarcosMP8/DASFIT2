@@ -74,4 +74,11 @@
     <string name="fallo_red">Fallo de red: %1$s</string>
     <string name="volver_a_login">Volver a Iniciar Sesión</string>
     <string name="ya_tienes_cuenta">¿Ya tienes cuenta?</string>
+    <string name="gym_nombre">Nombre Gimnasio</string>
+    <string name="gym_direccion">Dirección</string>
+    <string name="gym_horario">Horario</string>
+    <string name="gym_info_direccion">Dirección: %1$s</string>
+    <string name="gym_info_horario">Horario: %1$s</string>
+    <string name="permisos_localizacion_denegados">Permisos de localización denegados. La ubicación no se mostrará.</string>
+    <string name="error_cargar_gimnasios">Error cargando lista de gimnasios</string>
 </resources>

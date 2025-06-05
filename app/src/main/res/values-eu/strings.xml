@@ -74,4 +74,11 @@
     <string name="fallo_red">Sare akatsa: %1$s</string>
     <string name="volver_a_login">Saioa hasteko bueltatu</string>
     <string name="ya_tienes_cuenta">Jada kontua baduzu?</string>
+    <string name="gym_nombre">Gimnasioko izena</string>
+    <string name="gym_direccion">Helbidea</string>
+    <string name="gym_horario">Ordutegia</string>
+    <string name="gym_info_direccion">Helbidea: %1$s</string>
+    <string name="gym_info_horario">Ordutegia: %1$s</string>
+    <string name="permisos_localizacion_denegados">Kokapen baimenak ukatu dira. Kokapena ez da erakutsiko.</string>
+    <string name="error_cargar_gimnasios">Ezin izan da gimnasioen zerrenda kargatu</string>
 </resources>
