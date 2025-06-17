@@ -1,33 +1,414 @@
 [
   {
-    "nombre": "FitnessPark Bilbao",
-    "latitud": 43.2627,
-    "longitud": -2.9463,
-    "direccion": "Av. Lehendakari Aguirre, 29, 48014 Bilbao",
-    "horario": "L–V: 7:00–23:00, S–D: 9:00–21:00",
-    "web": "https://fitnesspark.com/bilbao",
-    "telefono": "+34 123 456 789",
+    "nombre": "FitnessPark Barakaldo – Megapark",
+    "latitud": 43.3232,
+    "longitud": -2.9749,
+    "direccion": "Avenida de la Ribera, s/n, 48903 Barakaldo, Bizkaia",
+    "horario": "L–D: 6:00–1:00",
+    "web": "https://www.fitnesspark.es/club/barakaldo-megapark",
+    "telefono": "+34 656 857 962",
     "tipo": "FitnessPark"
   },
   {
-    "nombre": "BasicFit Bilbao",
-    "latitud": 43.2635,
-    "longitud": -2.9379,
-    "direccion": "C. Reina Mª Cristina, 33, 48004 Bilbao",
-    "horario": "L–V: 6:00–22:00, S–D: 8:00–20:00",
-    "web": "https://basic-fit.com/es/es/clubes/bilbao",
-    "telefono": "+34 987 654 321",
+    "nombre": "FitnessPark Bilbao – Bolueta",
+    "latitud": 43.2601,
+    "longitud": -2.9296,
+    "direccion": "Bilbao-Galdakao Errepidea, 18, 48004 Bilbao, Bizkaia",
+    "horario": "L–D: 6:00–1:00",
+    "web": "https://www.fitnesspark.es/club/bilbao-bolueta",
+    "telefono": "+34 646 790 652",
+    "tipo": "FitnessPark"
+  },
+  {
+    "nombre": "FitnessPark Bilbao – Intermodal",
+    "latitud": 43.2625,
+    "longitud": -2.9340,
+    "direccion": "Centro Comercial Intermodal – Calle Gurtubay, 1, 48013 Bilbao, Bizkaia",
+    "horario": "L–D: 6:00–1:00",
+    "web": "https://www.fitnesspark.es/club/bilbao-intermodal",
+    "telefono": "+34 695 608 552",
+    "tipo": "FitnessPark"
+  },
+  {
+    "nombre": "FitnessPark Bilbao – Zubiarte",
+    "latitud": 43.2668,
+    "longitud": -2.9405,
+    "direccion": "Leizaola Lehendakariaren Kalea, 2, 48011 Bilbao, Bizkaia",
+    "horario": "L–D: 6:00–1:00",
+    "web": "https://www.fitnesspark.es/club/bilbao-zubiarte",
+    "telefono": "+34 654 131 958",
+    "tipo": "FitnessPark"
+  },
+  {
+    "nombre": "BasicFit Bilbao – Plaza Zabálburu",
+    "latitud": 43.2649,
+    "longitud": -2.9353,
+    "direccion": "Plaza Zabálburu (Juan de Garay Kalea, 2), 48009 Bilbao, Bizkaia",
+    "horario": "L–V: 7:00–22:30, S–D: 8:00–21:00",
+    "web": "https://www.basic-fit.com/es-es/gimnasios/bilbao-plaza-zabalburu",
+    "telefono": "—— (se gestiona por la web general)",
     "tipo": "BasicFit"
   },
   {
-    "nombre": "DreamFit Bizkaia",
+    "nombre": "BasicFit Bilbao – Rodríguez Arias",
+    "latitud": 43.2578,
+    "longitud": -2.9264,
+    "direccion": "Calle Rodríguez Arias, 58, 48013 Bilbao, Bizkaia",
+    "horario": "L–V: 7:00–22:30, S–D: 8:00–21:00",
+    "web": "https://www.basic-fit.com/es-es/gimnasios/bilbao-rodriguez-arias",
+    "telefono": "—— (se gestiona por la web general)",
+    "tipo": "BasicFit"
+  },
+  {
+    "nombre": "BasicFit Bilbao – Iturriaga",
+    "latitud": 43.2674,
+    "longitud": -2.9368,
+    "direccion": "Calle Iturriaga, 78, 48004 Bilbao, Bizkaia",
+    "horario": "L–V: 7:00–22:30, S–D: 8:00–21:00",
+    "web": "https://www.basic-fit.com/es-es/gimnasios/bilbao-iturriaga",
+    "telefono": "—— (se gestiona por la web general)",
+    "tipo": "BasicFit"
+  },
+  {
+    "nombre": "BasicFit Barakaldo – Mercado Municipal",
+    "latitud": 43.3175,
+    "longitud": -2.9983,
+    "direccion": "Mercado Municipal, Calle Elcano, 1, 48901 Barakaldo, Bizkaia",
+    "horario": "L–V: 7:00–22:30, S–D: 8:00–21:00",
+    "web": "https://www.basic-fit.com/es-es/clubs/basic-fit-barakaldo-mercado-municipal-0173b7422f7440eca1de39a9f94eb6b0.html",
+    "telefono": "—— (se gestiona por la web general)",
+    "tipo": "BasicFit"
+  },
+  {
+    "nombre": "BasicFit Barakaldo – Jose Vara",
+    "latitud": 43.3170,
+    "longitud": -2.9978,
+    "direccion": "Calle Jose Vara, 9, 48903 Barakaldo, Bizkaia",
+    "horario": "L–V: 06:00–23:00, S–D: 08:00–21:00",
+    "web": "https://www.basic-fit.com/es-es/clubs/basic-fit-baracaldo-jose-vara-c1e5473d00484a8bbce10dc0fedc08ac.html",
+    "telefono": "—— (se gestiona por la web general)",
+    "tipo": "BasicFit"
+  },
+  {
+    "nombre": "BasicFit Sestao – Juncal de Allende",
+    "latitud": 43.301616,
+    "longitud": -3.005975,
+    "direccion": "Avenida Juncal de Allende, 48910 Sestao, Bizkaia",
+    "horario": "L–V: 07:00–22:30, S–D: 08:00–21:00",
+    "web": "https://www.basic-fit.com/es-es/clubs/basic-fit-sestao-juncal-de-allende-a03326d173c54bcd9808f3582ee82a09.html",
+    "telefono": "+34 919 49 00 00",
+    "tipo": "BasicFit"
+  },
+  {
+    "nombre": "DreamFit Barakaldo",
+    "latitud": 43.3173,
+    "longitud": -2.9942,
+    "direccion": "Pormetxeta Kalea, 14, 48901 Barakaldo, Bizkaia",
+    "horario": "L–V: 7:00–22:00, S–D: 9:00–20:00",
+    "web": "https://www.dreamfit.com/barakaldo",
+    "telefono": "—— (se gestiona por la web general)",
+    "tipo": "DreamFit"
+  },
+  {
+    "nombre": "BeUp BEC – Barakaldo",
+    "latitud": 43.3208,
+    "longitud": -2.9726,
+    "direccion": "Ronda de Azkue, 1, 48903 Barakaldo, Bizkaia (BEC)",
+    "horario": "L–V: 6:00–23:00, S–D: 8:00–21:00",
+    "web": "https://centrosbeup.es/bec",
+    "telefono": "+34 944 781 222",
+    "tipo": "BeUp"
+  },
+  {
+    "nombre": "VivaGym Bilbao – Gran Vía",
+    "latitud": 43.2671,
+    "longitud": -2.9410,
+    "direccion": "Gran Vía de Don Diego López de Haro, 54, 48011 Bilbao, Bizkaia",
+    "horario": "L–D: 6:00–23:00",
+    "web": "https://vivagym.com/bilbao",
+    "telefono": "+34 944 613 200",
+    "tipo": "VivaGym"
+  },
+  {
+    "nombre": "VivaGym Artea – Leioa",
+    "latitud": 43.34028,
+    "longitud": -2.99250,
+    "direccion": "Peruri Auzoa, 33, C.C. Artea, 48940 Leioa, Bizkaia",
+    "horario": "L–V: 06:00–23:00, S–D: 08:00–21:00",
+    "web": "https://www.vivagym.es/gimnasios/vizcaya/artea",
+    "telefono": "944 912 706",
+    "tipo": "VivaGym"
+  },
+  {
+    "nombre": "VivaGym Bilbondo – Basauri",
+    "latitud": 43.22750,
+    "longitud": -2.87589,
+    "direccion": "Calle Zabalandi, s/n, C.C. Bilbondo, 48970 Basauri, Bizkaia",
+    "horario": "L–V: 06:00–23:00, S–D: 08:00–21:00",
+    "web": "https://www.vivagym.es/gimnasios/vizcaya/bilbondo",
+    "telefono": "+34 94 426 20 22",
+    "tipo": "VivaGym"
+  },
+  {
+    "nombre": "VivaGym Bolueta – Bilbao",
+    "latitud": 43.2648,
+    "longitud": -2.9293,
+    "direccion": "Av. de Miraflores, 51, 48004 Bilbao, Bizkaia",
+    "horario": "L–V: 06:00–23:00, S–D: 08:00–21:00",
+    "web": "https://www.vivagym.es/gimnasios/bolueta",
+    "telefono": "+34 944 255 784",
+    "tipo": "VivaGym"
+  },
+  {
+    "nombre": "Altafit Getxo–Leioa",
+    "latitud": 43.3335,
+    "longitud": -2.9998,
+    "direccion": "Amaia Kalea, 29, 48930 Getxo, Bizkaia",
+    "horario": "L–D: 6:00–23:00",
+    "web": "https://altafit.com/es/club/getxo-leioa",
+    "telefono": "+34 912 999 013",
+    "tipo": "Altafit"
+  },
+  {
+    "nombre": "Altafit Bilbao – Abando",
+    "latitud": 43.26048,
+    "longitud": -2.92688,
+    "direccion": "Calle José María Olavarri, 1, 48001 Bilbao, Bizkaia",
+    "horario": "L–V: 7:00–22:30, S: 9:00–21:00, D: 10:00–14:00",
+    "web": "https://altafitgymclub.com/gimnasios/vizcaya-bilbao",
+    "telefono": "912 999 013",
+    "tipo": "Altafit"
+  },
+  {
+    "nombre": "Altafit Bilbao – Miribilla",
+    "latitud": 43.2595,
+    "longitud": -2.9202,
+    "direccion": "Calle Doctor Espinosa Oribe, 3 y 5 y Calle Santiago de Compostela, 10, 48003 Bilbao, Bizkaia",
+    "horario": "L–V: 7:00–22:30, S–D: 9:00–14:00",
+    "web": "https://altafitgymclub.com/gimnasios/vizcaya-bilbaomiribilla",
+    "telefono": "912 999 013",
+    "tipo": "Altafit"
+  },
+  {
+    "nombre": "Altafit Portugalete – Ballonti",
+    "latitud": 43.3199008,
+    "longitud": -3.0207248,
+    "direccion": "Avenida Ballonti, 1, 48920 Portugalete, Bizkaia",
+    "horario": "L–V: 6:30–22:30, S: 9:00–20:00, D: 9:00–14:00",
+    "web": "https://altafitgymclub.com/gimnasios/vizcaya-ballonti",
+    "telefono": "+34 912 99 90 13",
+    "tipo": "Altafit"
+  },
+  {
+    "nombre": "Altafit Bilbao – Deusto",
+    "latitud": 43.2631,
+    "longitud": -2.9472,
+    "direccion": "Plaza San Pedro, 1, 48014 Bilbao, Bizkaia (Deusto)",
+    "horario": "L–V: 07:00–22:30, S: 09:00–14:00, D: 10:00–14:00",
+    "web": "https://altafitgymclub.com/gimnasios/vizcaya-bilbaodeusto",
+    "telefono": "+34 912 999 013",
+    "tipo": "Altafit"
+  },
+  {
+    "nombre": "Synergym Bilbao – Deusto",
+    "latitud": 43.2640,
+    "longitud": -2.9455,
+    "direccion": "Juan de Garay Kalea, 5, 48013 Bilbao, Bizkaia",
+    "horario": "L–V: 7:00–23:00, S–D: 9:00–21:00",
+    "web": "https://synergym.com/centro/bilbao-deusto",
+    "telefono": "+34 944 456 789",
+    "tipo": "Synergym"
+  },
+  {
+    "nombre": "Synergym Bilbao – Sarriko",
+    "latitud": 43.2652,
+    "longitud": -2.9296,
+    "direccion": "C. Islas Canarias, 4, 48015 Bilbao, Bizkaia",
+    "horario": "L–V: 06:00–23:00, S: 09:00–18:00, D: 09:00–14:00",
+    "web": "https://synergym.es/bilbao-sarriko",
+    "telefono": "+34 649 564 938",
+    "tipo": "Synergym"
+  },
+  {
+    "nombre": "Synergym Getxo",
+    "latitud": 43.3235,
+    "longitud": -3.0157,
+    "direccion": "C. Puerto Viejo, 10, 48993 Getxo, Bizkaia",
+    "horario": "L–V: 06:00–23:00, S: 09:00–18:00, D: 09:00–14:00",
+    "web": "https://synergym.es/getxo",
+    "telefono": "+34 649 564 938",
+    "tipo": "Synergym"
+  },
+  {
+    "nombre": "Synergym Portugalete",
+    "latitud": 43.3219,
+    "longitud": -3.0247,
+    "direccion": "Av. Libertador Simón Bolívar, 2, 48920 Portugalete, Bizkaia",
+    "horario": "L–V: 07:00–00:00, S: 10:00–19:00, D: 10:00–15:00",
+    "web": "https://synergym.es/portugalete",
+    "telefono": "680 176 885",
+    "tipo": "Synergym"
+  },
+  {
+    "nombre": "Synergym Bilbao – Indautxu",
+    "latitud": 43.2638,
+    "longitud": -2.9310,
+    "direccion": "Egia Jeneralaren Kalea, 38, 48009 Bilbao, Bizkaia",
+    "horario": "L–V: 06:00–23:00, S: 09:00–18:00, D: 09:00–14:00",
+    "web": "https://synergym.es/bilbao-indautxu",
+    "telefono": "649 564 938",
+    "tipo": "Synergym"
+  },
+  {
+    "nombre": "BETiFIT Bilbao",
+    "latitud": 43.2626,
+    "longitud": -2.9347,
+    "direccion": "Calle Licenciado Poza, 69, 48013 Bilbao, Bizkaia",
+    "horario": "L–V: 11:30–14:00 y 17:00–20:30",
+    "web": "https://betifit.com/gimnasios/betifit-bilbao",
+    "telefono": "608 562 964",
+    "tipo": "BETiFIT"
+  },
+  {
+    "nombre": "Summit Fitness Club Bilbao – Abando",
+    "latitud": 43.2638,
+    "longitud": -2.9304,
+    "direccion": "Lersundi Kalea, 16, 48009 Bilbao, Bizkaia",
+    "horario": "L–V: 7:00–22:00, S–D: 9:00–21:00",
+    "web": "https://summitpt.es/bilbao",
+    "telefono": "+34 688 885 826",
+    "tipo": "Summit Fitness Club"
+  },
+  {
+    "nombre": "Summit Fitness Club Barakaldo",
+    "latitud": 43.29639,
+    "longitud": -2.98813,
+    "direccion": "Bizkaia, 16, Bajo, 48902 Barakaldo, Bizkaia",
+    "horario": "L–V: 07:30–21:30, S: 09:30–12:30, D: Cerrado",
+    "web": "https://summitpt.es",
+    "telefono": "+34 688 88 58 26",
+    "tipo": "Summit Fitness Club"
+  },
+  {
+    "nombre": "Brooklyn Fitboxing Bilbao – General Concha",
+    "latitud": 43.2626,
+    "longitud": -2.9350,
+    "direccion": "Calle General Concha, 10, 48008 Bilbao, Bizkaia",
+    "horario": "L–V: 08:30–11:30, S: 09:30–12:30, D: Cerrado",
+    "web": "https://www.brooklynfitboxing.com/public/es/es-es/club/BILBAO",
+    "telefono": "+34 608 26 50 97",
+    "tipo": "Brooklyn Fitboxing"
+  },
+  {
+    "nombre": "Brooklyn Fitboxing Bilbao – Zabalbide",
+    "latitud": 43.2622,
+    "longitud": -2.9355,
+    "direccion": "Zabalbide Kalea, 19, 48006 Bilbao, Bizkaia",
+    "horario": "L–V: 08:30–11:30, S: 09:30–12:30, D: Cerrado",
+    "web": "https://www.brooklynfitboxing.com",
+    "telefono": "+34 608 26 50 97",
+    "tipo": "Brooklyn Fitboxing"
+  },
+  {
+    "nombre": "Brooklyn Fitboxing Bilbao – San Mamés",
     "latitud": 43.2550,
     "longitud": -2.9230,
-    "direccion": "C. Indalecio Prieto, 5, 48009 Bilbao",
-    "horario": "L–V: 7:00–22:00, S–D: 9:00–20:00",
-    "web": "https://dreamfit.com/bilbao",
-    "telefono": "+34 456 789 123",
-    "tipo": "DreamFit"
+    "direccion": "Av. Sabino Arana, 30, 48013 Bilbao, Bizkaia",
+    "horario": "L–V: 08:30–11:30, S: 09:30–12:30, D: Cerrado",
+    "web": "https://www.brooklynfitboxing.com",
+    "telefono": "+34 608 26 50 97",
+    "tipo": "Brooklyn Fitboxing"
+  },
+  {
+    "nombre": "Brooklyn Fitboxing Barakaldo",
+    "latitud": 43.3200,
+    "longitud": -2.9960,
+    "direccion": "Landaburu Kalea, 5, 48901 Barakaldo, Bizkaia",
+    "horario": "L–V: 08:30–11:30, S: 09:30–12:30, D: Cerrado",
+    "web": "https://www.brooklynfitboxing.com/public/es/es-es/gimnasios/vizcaya",
+    "telefono": "+34 608 26 50 97",
+    "tipo": "Brooklyn Fitboxing"
+  },
+  {
+    "nombre": "Brooklyn Fitboxing Getxo",
+    "latitud": 43.3450,
+    "longitud": -3.0040,
+    "direccion": "Polígono Industrial Errotatxu Ind., A15 Local A15, 48993 Getxo, Bizkaia",
+    "horario": "L:07:00–12:00/13:30–21:30, M–V según web, S: 09:30–13:30, D: Cerrado",
+    "web": "https://bfclick.com/getxo-gmb",
+    "telefono": "+34 608 26 50 97",
+    "tipo": "Brooklyn Fitboxing"
+  },
+
+  {
+    "nombre": "Metropolitan Isozaki",
+    "latitud": 43.2630,
+    "longitud": -2.9110,
+    "direccion": "Paseo Uribitarte, 4 Ext., 48001 Bilbao, Bizkaia",
+    "horario": "Consulta en centro",
+    "web": "https://clubmetropolitan.com/gimnasios/bilbao",
+    "telefono": "94 423 44 44 ext.1",
+    "tipo": "Metropolitan"
+  },
+  {
+    "nombre": "Metropolitan Begoña",
+    "latitud": 43.2700,
+    "longitud": -2.9240,
+    "direccion": "Masustegi Kalea, 25, 48006 Bilbao, Bizkaia",
+    "horario": "Consulta en centro",
+    "web": "https://clubmetropolitan.com/gimnasios/bilbao",
+    "telefono": "94 412 90 66",
+    "tipo": "Metropolitan"
+  },
+
+  {
+    "nombre": "Curves Bilbao",
+    "latitud": 43.2625,
+    "longitud": -2.9315,
+    "direccion": "Calle Fernández del Campo, 29, 48010 Bilbao, Bizkaia",
+    "horario": "L–V: 09:00–21:00",
+    "web": "https://gimnasiocurves.com",
+    "telefono": "944 21 50 09",
+    "tipo": "Curves"
+  },
+  {
+    "nombre": "Curves Barakaldo",
+    "latitud": 43.3205,
+    "longitud": -2.9955,
+    "direccion": "Calle San Valentín Berriotxoa, 6, 48901 Barakaldo, Bizkaia",
+    "horario": "L–V: 09:00–21:00",
+    "web": "https://gimnasiocurves.com",
+    "telefono": "944 37 96 22",
+    "tipo": "Curves"
+  },
+  {
+    "nombre": "Curves Leioa",
+    "latitud": 43.3140,
+    "longitud": -3.0200,
+    "direccion": "Calle Doctor Luis Bilbao Líbano, 2, 48940 Leioa, Bizkaia",
+    "horario": "L–V: 09:00–11:30, 13:00–15:30, 17:30–20:30",
+    "web": "https://gimnasiocurves.com",
+    "telefono": "944 80 74 27",
+    "tipo": "Curves"
+  },
+  {
+    "nombre": "Curves Las Arenas",
+    "latitud": 43.3380,
+    "longitud": -3.0290,
+    "direccion": "Calle Gobela, 21, 48930 Getxo, Bizkaia",
+    "horario": "L/X: 08:45–11:30 & 13:00–20:45, M/J: 08:45–16:00 & 17:30–20:45, V: 08:45–11:30 & 13:00–18:00",
+    "web": "https://gimnasiocurves.com",
+    "telefono": "944 63 04 73",
+    "tipo": "Curves"
+  },
+  {
+    "nombre": "Curves Algorta",
+    "latitud": 43.3260,
+    "longitud": -3.0230,
+    "direccion": "Algorta, Getxo, Bizkaia",
+    "horario": "L/X: 08:45–11:30 & 13:00–20:45, M/J: 08:45–16:00 & 17:30–20:45, V: 08:45–11:30 & 13:00–18:00",
+    "web": "https://gimnasiocurves.com",
+    "telefono": "944 63 04 73",
+    "tipo": "Curves"
   }
-  // … y así tantos gimnasios como necesites …
 ]
